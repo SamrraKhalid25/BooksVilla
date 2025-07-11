@@ -1,0 +1,6 @@
+<i class="fa-sharp fa-solid fa-sparkles"></i> sparkles
+<i class="fa-sharp fa-solid fa-eye"></i> eye
+<i class="fa-sharp fa-solid fa-palette"></i> pallette
+<i class="fa-sharp fa-regular fa-moon-stars"></i> moon and stars
+
+https://www.apple.com/ipad-pro/

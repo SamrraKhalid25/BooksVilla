@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Booksvilla</title>
+<link rel="icon" href="fav.icon.png" type="image/png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+  :root {
+   --primary-color: #ffffff;
+   --secondary-color: #FF3B30;
+   --background-color: linear-gradient(to right, #000000, #2a312c, #000000);
+   --button-hover: #E52020;
+   --sub-background: #000000;
+ }
+ 
+ .light-mode {
+   --primary-color: #000000;
+   --secondary-color: #8cc0d4;
+   --background-color: linear-gradient(to right, #aca7a7, #faeded, #aca7a7);
+   --button-hover: #8d8f96;
+   --sub-background: #9e9a9a;
+ }
+ 
+
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+ 
+ html {
+   scroll-behavior: smooth;
+ }
+ 
+ body {
+   font-family: 'Poppins', sans-serif;
+   font-weight: 700;
+   background: var(--background-color);
+   color: var(--primary-color);
+ }
+ 
+
+ nav {
+   display: flex;
+   justify-content: center; 
+   align-items: center; 
+   position: relative; 
+   flex-wrap: nowrap;
+   padding: 10px 20px;
+   position: sticky;
+   top: 0;
+   z-index: 1000;
+   backdrop-filter: blur(10px);
+   background: transparent;
+ }
+ 
+
+ .nav-links {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   display: flex;
+   flex-wrap: nowrap;
+   flex-direction: row;
+   justify-content: space-around; 
+   align-items: center; 
+   gap: 15px; 
+ }
+ 
+ .nav-links a {
+   text-decoration: none;
+   color: var(--primary-color);
+   font-size: 18px;
+   font-weight: bold;
+   padding: 10px 15px;
+   transition: color 0.3s ease;
+   white-space: nowrap; 
+   margin: 0 10px; 
+ }
+ 
+ .nav-links a:hover {
+   color: var(--button-hover);
+ }
+ 
+ .divider {
+   width: 2px;
+   height: 20px;
+   background-color: var(--secondary-color);
+ }
+ 
+
+ .right-controls {
+   margin-left: auto; 
+   display: flex;
+   align-items: center;
+   gap: 15px;
+ }
+ 
+
+ .toggle-btn {
+   background-color: var(--secondary-color);
+   color: var(--primary-color);
+   padding: 10px 14px;
+   border: none;
+   border-radius: 25px;
+   cursor: pointer;
+   font-weight: bold;
+   display: flex;
+   align-items: center;
+   transition: all 0.3s ease;
+ }
+ 
+ .toggle-btn:hover {
+   background-color: var(--button-hover);
+   transform: scale(1.05);
+   box-shadow: 0 0 10px var(--primary-color);
+ }
+
+ 
+
+ .social-icons {
+   display: flex;
+   gap: 10px;
+ }
+ 
+ .social-icons a {
+   color: var(--primary-color);
+   font-size: 24px;
+   transition: color 0.3s ease;
+   margin-right: 4px; 
+ }
+ 
+ .social-icons a:hover {
+   color: var(--button-hover);
+ }
+
+.search-container {
+   display: flex;
+   align-items: center;
+   border-radius: 20px;
+   overflow: hidden;
+   background-color: transparent;
+   margin: 0px; 
+    padding: 5px 0px;
+   width: 50%;
+   justify-content: center;
+   border: black 3px solid;
+}
+
+.search-input {
+   border: none;
+   outline: none;
+   padding: 10px;
+   font-size: 14px;
+   width: 100%; 
+   background: transparent;
+   color: var(--primary-color);
+}
+
+.search-btn {
+   background: var(--secondary-color);
+   border: none;
+   padding: 10px;
+   border-radius: 50%;
+   cursor: pointer;
+   color:var(--primary-color);
+   margin-left: 10px; 
+}
+.search-btn:hover {
+   background-color: var(--button-hover);
+   color: var(--primary-color);
+}
+
+.icons {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   margin-left: 15px;
+}
+
+.icons i {
+   color: var(--primary-color);
+   font-size: 20px;
+   margin: 0 10px;
+   cursor: pointer;
+   position: relative;
+}
+.icons i:hover {
+   color: var(--button-hover);
+}
+
+.cart-badge {
+   position: absolute; 
+   top: -8px; 
+   right: -10px;
+    background: red; 
+    color: white; 
+    font-size: 12px; 
+    padding: 2px 6px; 
+    border-radius: 50%;
+}
+
+
+
+.header-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 0; 
+   padding: 0; 
+   
+}
+#scrollToTop {
+   position: fixed;
+   bottom: 20px;
+   right: 20px;
+   width: 50px;
+   height: 50px;
+   background-color: var(--secondary-color);
+   color: white;
+   border: none;
+   border-radius: 50%;
+   font-size: 24px;
+   cursor: pointer;
+   display: none; /* Hidden by default */
+   transition: opacity 0.3s, transform 0.3s;
+}
+
+#scrollToTop:hover {
+   background-color: var(--button-hover);
+   color: var(--primary-color);
+   color: #0d0d2b;
+   transform: scale(1.05);
+   box-shadow: 0 0 15px var(--primary-color);
+}
+.container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 4rem 8%;
+      height: 100vh;
+    }
+
+    .text-section {
+      flex: 1;
+      max-width: 50%;
+      text-align: center;
+    }
+
+    .text-section h1 {
+      color: var(--secondary-color);
+      
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /* Creates an outline effect */
+    }
+
+    .text-section h2 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+    }
+
+    .text-section p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    .images-section {
+      flex: 1;
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      align-items: center;
+      max-width: 50%;
+    }
+
+    .images-section img {
+  width: 120px;
+  height: 440px;
+  border-radius: 1rem;
+  object-fit: cover;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+ .images-section img:nth-child(2) {
+      height: 460px;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+        padding: 2rem;
+      }
+
+      .text-section, .images-section {
+        max-width: 100%;
+      }
+
+      .images-section {
+        margin-top: 2rem;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .images-section img {
+        height: auto;
+        width: 80%;
+      }
+    }
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-container {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+.choose {
+   display: flex;
+   justify-content: center;
+   padding: 30px;
+   margin-top: 5px;
+   margin-bottom: 2px;
+   background-color: var(--background-color);
+   text-align: center;
+}
+
+.choose-box {
+   width: 20%;
+}
+
+.choose-box img {
+   width: 100px;
+   height: auto;
+   cursor: pointer;
+   margin-bottom: 5px;
+   display: inline-block;
+   transition: transform 0.2s ease-in-out;
+}
+.choose-box img:hover{
+   animation: shake 0.3s ease-in-out infinite;
+}
+@keyframes shake {
+0% { transform: translateX(0); }
+25% { transform: translateX(-3px); }
+50% { transform: translateX(3px); }
+75% { transform: translateX(-3px); }
+100% { transform: translateX(0); }
+}
+
+.choose-box h3 {
+   font-size: 1.2em;
+   color: var(--primary-color);
+}
+
+
+h2{
+  text-align: center;
+  font-size: 2rem;
+  padding: 10px;
+}
+/* our mission */
+.section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.text-content {
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+h2 .highlight {
+  color: var(--secondary-color); /* Orange */
+}
+
+.vision h2 .highlight {
+  color: var(--secondary-color); /* Light green */
+}
+
+.image-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px
+}
+
+.image-row img {
+  flex: 1;
+  min-width: 200px;
+  max-width: 23%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+/* cart styling  */
+.cartTab{
+  width: 350px;
+  background-color: #292827;
+  color: #eee;
+  position: fixed;
+  z-index: 999;
+inset: 90px -400px 0 auto;
+display: grid;
+grid-template-rows: 70px 1fr 70px ;
+}
+body.showCart .cartTab{
+  inset: 55px 0 0 auto;
+}
+
+.cartTab h2{
+  padding: 20px;
+  margin: 0;
+font-weight: 300;
+}
+.cartTab .btn{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 5px;
+}
+.cartTab .btn button{
+  background-color: var(--secondary-color);
+  border: none;
+  font-family: poppins, sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+}
+.cartTab .btn .close{
+  background-color: #eee;
+}
+.cartTab .listCart .item img{
+width: 60px;
+  height: 80px;
+  object-fit: cover;
+    margin-right: -20px;
+
+}
+.cartTab .listCart .item{ 
+  display: grid;
+  grid-template-columns: 70px 100px 40px 1fr;
+  gap: 10px;
+  text-align: center;
+  align-items: center;
+}
+.listCart .quantity span{
+display: inline-block;
+width: 20px;
+height: 20px;
+  background-color: #eee;
+  color: #555;
+  border-radius: 50%; 
+cursor: pointer;
+}
+.listCart .quantity span:nth-child(2){
+  background-color: transparent;
+  color: #eee;
+}
+.listCart .item:nth-child(even) {
+ background-color: #eee1;
+}
+.listCart{
+  overflow: auto;
+}
+.listCart::-webkit-scrollbar {
+  width: 0;
+}
+/* cart styling ends */
+
+
+
+     
+    </style>
+</head>
+
+<body>
+   <nav>
+      <div class="nav-links">
+          <a href="home.html">Home</a>
+          <span class="divider"></span>
+          <a href="collection.html">Our Collection</a>
+          <span class="divider"></span>
+          <a href="aboutus.html">About Us</a>
+          <span class="divider"></span>
+          <a href="contact.php">Contact Us</a>
+          <span class="divider"></span>
+          <a href="Bbestsellers.html">Best Sellers</a>
+          <span class="divider"></span>
+      </div>
+      <div class="right-controls">
+          <!-- Theme Toggle Button -->
+          <button class="toggle-btn" onclick="toggleTheme()">
+            <i class="fas fa-moon"></i>
+        </button>
+    
+          
+          <div class="social-icons">
+              <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+              <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+              <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </nav>
+ 
+  <!-- header start -->
+    <div class="header-container">
+        <img src="images/logo/logo new.png" alt="Logo" class="logo">
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search Here ...">
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+<!-- icons -->
+        <div class="icons">
+<i class="fas fa-heart" id="wishlist-toggle"></i>
+ <a href="login.php">
+  <i class="fas fa-user"></i></a>
+ <i class="fas fa-shopping-cart icon-cart" >
+    <span id="cart-count" class="cart-badge">0</span>
+  </i>
+</div>
+</div>
+<!-- icons end -->
+ <!-- cart starts here -->
+ <div class="cartTab">
+  <h2>Shopping Cart</h2>
+  <div class="listCart">
+    <!-- 1st div start -->
+<div class="item"> 
+  <!-- 2nd div -->
+  <div class="image">
+    <img src="images/products/action n adventure/a thunder.jpg" alt="">
+  </div>
+  <!-- 2nd div end -->
+  <div class="name">
+    NAME
+  </div>
+  <div class="totalPrice">
+    RS 820/-
+  </div>
+  <div class="quantity">
+    <span class="minus"><</span>
+    <span>1</span>
+    <span class="plus">></span>
+  </div>
+</div>
+
+
+  </div>
+  <div class="btn">
+    <button class="close">CLOSE</button>
+    <button class="checkOut">CHECKOUT</button>
+  </div>
+
+ </div>
+ <!-- cart ends here -->
+  <button id="scrollToTop" onclick="scrollToTop()">⬆</button>
+
+  <div class="container">
+    <div class="text-section">
+      <h1>About Us</h1>
+      <h2>A New Chapter in the World of Books</h2>
+      <p>At <strong>BooksVilla</strong>, we believe in the timeless magic of books. Whether you're seeking adventure, knowledge, or a quiet moment of reflection, we provide a curated collection to fuel your imagination and curiosity.</p>
+      <p>Our bookstore blends tradition with technology—offering the charm of classic paperbacks alongside the convenience of modern eBooks.</p>
+      <p>We've been committed to serving readers of all ages and interests. From niche genres to bestselling titles, our mission is to connect people through stories, one page at a time.</p>
+    </div>
+    <div class="images-section">
+      <img src="images/blog/665a49082a682b60a8304e6fa1bff0e5acdfae1b_2_514x748.jpeg" alt="Bookstore Image 1">
+      <img src="images/blog/6784500d0dbdb0f3b52f9b5fb68fd0207d31de1f_2_1030x750.jpeg" alt="Bookstore Image 2">
+      <img src="images/blog/images.jfif" alt="Bookstore Image 3">
+    </div>
+ </div>
+ <br>
+ 
+ <h2><span>WHY</span> <span class="highlight">CHOOSE US?</span></h2> <div class="choose">
+ 
+  <div class="choose-box">
+      <i><img src="images/about us/cozy experience.png" alt=""></i>
+      <h3>Cozy Experience</h3>
+  </div>
+  <div class="choose-box">
+      <i><img src="images/about us/fast delivery.png" alt=""></i>
+      <h3>Fast Delivery</h3>
+  </div>
+  <div class="choose-box">
+      <i><img src="images/about us/handpicked collections.png" alt=""></i>
+      <h3>Handpicked Collections</h3>
+  </div>
+  <div class="choose-box">
+      <i><img src="images/about us/passionate staff.png" alt=""></i>
+      <h3>Passionate Staff</h3>
+  </div>
+</div>
+<br>
+<section class="section mission">
+    <div class="text-content">
+      <h2><span>Our</span> <span class="highlight">Mission</span></h2>
+     <div class="txt-section">
+      <p>BooksVilla mission is to create highly knowledgeable, intellectual, and well-read Pakistani communities throughout the nation by developing a clearer reorganization of customer needs and by providing customers with a combination of knowledge-propagating media. Our aims are Creating the biggest online store, providing a professional service that allows readers, writers and sellers to go through the books and to buy or sell easily from our online store."</p>
+    </div>
+    </div>
+    <br>
+
+    <div class="image-row">
+      <img src="images/about us/ourmission1.png" alt="Icon sketches">
+      <img src="images/about us/ourmission2.png" alt="Design in progress">
+      <img src="images/about us/download-removebg-preview.png" alt="Happy client">
+    </div>
+  </section>
+
+  <section class="section vision">
+    <div class="text-content">
+      <h2><span>Our</span> <span class="highlight">Vision</span></h2>
+      <p>
+       At Booksvilla, we envision a world where books are just a click away for every reader.
+Our mission is to connect minds through stories, knowledge, and imagination.
+We aim to make reading accessible, affordable, and inspiring for all ages. <br>
+Empowering readers, one book at a time—digitally and beyond.
+      </p>
+    </div>
+    <div class="image-row">
+      <img src="images/about us/download__3_-removebg-preview.png" alt="Vision graphic">
+     <img src="images/about us/immerse-yourself-digital-library-explore-thriving-online-bookstore-isometric-d-design-dive-vibrant-experience-371810717-removebg-preview.png" alt="Vision graphic">
+      <img src="images/about us/laptop-ebooks-presentation-web-store-49666174-removebg-preview.png" alt="Vision graphic">
+
+
+    >
+    </div>
+  </section>
+  
+<script>
+       
+    function toggleTheme() {
+    document.body.classList.toggle("light-mode");
+    const icon = document.querySelector(".toggle-btn i");
+    const isLightMode = document.body.classList.contains("light-mode");
+
+    // Save preference
+    localStorage.setItem("theme", isLightMode ? "light" : "dark");
+
+    // Update icon
+    icon.classList.remove(isLightMode ? "fa-moon" : "fa-sun");
+    icon.classList.add(isLightMode ? "fa-sun" : "fa-moon");
+}
+        window.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("theme");
+    const icon = document.querySelector(".toggle-btn i");
+
+    if (savedTheme === "light") {
+        document.body.classList.add("light-mode");
+        if (icon) {
+            icon.classList.remove("fa-moon");
+            icon.classList.add("fa-sun");
+        }
+    } else {
+        if (icon) {
+            icon.classList.remove("fa-sun");
+            icon.classList.add("fa-moon");
+        }
+    }
+});
+        // Scroll to top smoothly
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+// Cart functionality`~
+  let iconCart = document.querySelector('.icon-cart');
+  let closeCart = document.querySelector('.close');
+  let body = document.querySelector('body');
+
+  iconCart.addEventListener('click', () => {
+    body.classList.toggle('showCart')
+  }); 
+ closeCart.addEventListener('click', () => {
+    body.classList.toggle('showCart')
+  });
+// cart functionality end
+ </script>
+</body>
+</html>

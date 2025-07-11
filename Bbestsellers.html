@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Sellers | Booksvilla</title>
+<link rel="icon" href="fav.icon.png" type="image/png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+  :root {
+   --primary-color: #ffffff;
+   --secondary-color: #FF3B30;
+   --background-color: linear-gradient(to right, #000000, #2a312c, #000000);
+   --button-hover: #E52020;
+   --sub-background: #000000;
+ }
+ 
+ .light-mode {
+   --primary-color: #000000;
+   --secondary-color: #8cc0d4;
+   --background-color: linear-gradient(to right, #aca7a7, #faeded, #aca7a7);
+   --button-hover: #8d8f96;
+   --sub-background: #9e9a9a;
+ }
+ 
+
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+ 
+ html {
+   scroll-behavior: smooth;
+ }
+ 
+ body {
+   font-family: 'Poppins', sans-serif;
+   font-weight: 700;
+   background: var(--background-color);
+   color: var(--primary-color);
+ }
+ 
+
+ nav {
+   display: flex;
+   justify-content: center; 
+   align-items: center; 
+   position: relative; 
+   flex-wrap: nowrap;
+   padding: 10px 20px;
+   position: sticky;
+   top: 0;
+   z-index: 1000;
+   backdrop-filter: blur(10px);
+   background: transparent;
+ }
+ 
+
+ .nav-links {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   display: flex;
+   flex-wrap: nowrap;
+   flex-direction: row;
+   justify-content: space-around; 
+   align-items: center; 
+   gap: 15px; 
+ }
+ 
+ .nav-links a {
+   text-decoration: none;
+   color: var(--primary-color);
+   font-size: 18px;
+   font-weight: bold;
+   padding: 10px 15px;
+   transition: color 0.3s ease;
+   white-space: nowrap; 
+   margin: 0 10px; 
+ }
+ 
+ .nav-links a:hover {
+   color: var(--button-hover);
+ }
+ 
+ .divider {
+   width: 2px;
+   height: 20px;
+   background-color: var(--secondary-color);
+ }
+ 
+
+ .right-controls {
+   margin-left: auto; 
+   display: flex;
+   align-items: center;
+   gap: 15px;
+ }
+ 
+
+ .toggle-btn {
+   background-color: var(--secondary-color);
+   color: var(--primary-color);
+   padding: 10px 14px;
+   border: none;
+   border-radius: 25px;
+   cursor: pointer;
+   font-weight: bold;
+   display: flex;
+   align-items: center;
+   transition: all 0.3s ease;
+ }
+ 
+ .toggle-btn:hover {
+   background-color: var(--button-hover);
+   transform: scale(1.05);
+   box-shadow: 0 0 10px var(--primary-color);
+ }
+ 
+
+ .social-icons {
+   display: flex;
+   gap: 10px;
+ }
+ 
+ .social-icons a {
+   color: var(--primary-color);
+   font-size: 24px;
+   transition: color 0.3s ease;
+   margin-right: 4px; 
+ }
+ 
+ .social-icons a:hover {
+   color: var(--button-hover);
+ }
+
+.search-container {
+   display: flex;
+   align-items: center;
+   border-radius: 20px;
+   overflow: hidden;
+   background-color: transparent;
+   margin: 0px; 
+    padding: 5px 0px;
+   width: 50%;
+   justify-content: center;
+   border: black 3px solid;
+}
+
+.search-input {
+   border: none;
+   outline: none;
+   padding: 10px;
+   font-size: 14px;
+   width: 100%; 
+   background: transparent;
+   color: var(--primary-color);
+}
+
+.search-btn {
+   background: var(--secondary-color);
+   border: none;
+   padding: 10px;
+   border-radius: 50%;
+   cursor: pointer;
+   color:var(--primary-color);
+   margin-left: 10px; 
+}
+.search-btn:hover {
+   background-color: var(--button-hover);
+   color: var(--primary-color);
+}
+
+.icons {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   margin-left: 15px;
+}
+
+.icons i {
+   color: var(--primary-color);
+   font-size: 20px;
+   margin: 0 10px;
+   cursor: pointer;
+   position: relative;
+}
+.icons i:hover {
+   color: var(--button-hover);
+}
+
+.cart-badge {
+   position: absolute; 
+   top: -8px; 
+   right: -10px;
+    background: red; 
+    color: white; 
+    font-size: 12px; 
+    padding: 2px 6px; 
+    border-radius: 50%;
+}
+
+
+
+.header-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 0; 
+   padding: 0; 
+   
+}
+#scrollToTop {
+   position: fixed;
+   bottom: 20px;
+   right: 20px;
+   width: 50px;
+   height: 50px;
+   background-color: var(--secondary-color);
+   color: white;
+   border: none;
+   border-radius: 50%;
+   font-size: 24px;
+   cursor: pointer;
+   display: none; /* Hidden by default */
+   transition: opacity 0.3s, transform 0.3s;
+}
+
+#scrollToTop:hover {
+   background-color: var(--button-hover);
+   color: var(--primary-color);
+   color: #0d0d2b;
+   transform: scale(1.05);
+   box-shadow: 0 0 15px var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-container {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+/* hero section starts  */
+.hero {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .hero h1 {
+      font-size: 48px;
+      font-family: 'Georgia', serif;
+      color: var(--primary-color);
+    }
+    .hero p {
+      margin: 10px 0 30px;
+      color: var(--primary-color);
+      font-size: 18px;
+    }
+    .hero button{
+    border: 2px solid var(--sub-background);
+   color: var(--primary-color);
+   background-color: var(--secondary-color);
+      padding: 15px 30px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 6px;
+  
+    }
+    .hero button:hover {
+      background-color: var(--button-hover);
+   color: var(--primary-color);
+   color: #0d0d2b;
+   transform: scale(1.05);
+   box-shadow: 0 0 15px var(--primary-color);   
+   }
+    .books-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    align-items: start;
+    gap: 30px;
+    padding: 40px 60px;
+}
+
+.book {
+    width: 160px;
+    text-align: center;
+    position: relative;
+}
+
+.book img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(228, 220, 220, 0.642);
+}
+
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 40px;
+      padding-bottom: 60px;
+    }
+    .stat-box {
+      text-align: center;
+    }
+    .stat-box h2 {
+      font-size: 24px;
+      margin: 10px 0;
+      color: var(--secondary-color);
+    }
+    .stat-box p {
+      color: var(--primary-color);
+    }
+        
+    /* hero section ends */
+    /* best seller section styling starts here */
+   .best-sellers-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+.best-sellers-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--secondary-color);
+  font-family: "DynaPuff", system-ui;
+   font-optical-sizing: auto;
+   font-weight: 400;
+   font-style: normal;
+  font-size: 2.5em;
+
+}
+
+.best-sellers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 80px 30px;
+  justify-content: center;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 90%;
+  height: 340px;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px 0px 30px 0px;
+  background: var(--sub-background);
+  backface-visibility: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.flip-card-front {
+  z-index: 2;
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: 70%;
+  object-fit: contain;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.flip-card-front h4 {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.flip-card-front p {
+  font-size: 14px;
+  margin: 2px 0;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  justify-content: center;
+}
+
+.add-cart-btn {
+   margin-top: auto;
+   border: 2px solid var(--sub-background);
+   color: var(--primary-color);
+   background-color: var(--secondary-color);
+   padding: 15px 30px;
+   border: none;  
+   font-size: 16px;
+   cursor: pointer;
+   border-radius: 6px;;
+}
+
+.add-cart-btn:hover {
+background-color: var(--button-hover);
+color: var(--primary-color);
+transform: scale(1.05);
+box-shadow: 0 0 15px var(--primary-color);
+ }
+/* best selling books ends */
+/* cart styling  */
+.cartTab{
+  width: 350px;
+  background-color: #292827;
+  color: #eee;
+  position: fixed;
+  z-index: 999;
+inset: 90px -400px 0 auto;
+display: grid;
+grid-template-rows: 70px 1fr 70px ;
+}
+body.showCart .cartTab{
+  inset: 55px 0 0 auto;
+}
+
+.cartTab h2{
+  padding: 20px;
+  margin: 0;
+font-weight: 300;
+}
+.cartTab .btn{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 5px;
+}
+.cartTab .btn button{
+  background-color: var(--secondary-color);
+  border: none;
+  font-family: poppins, sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+}
+.cartTab .btn .close{
+  background-color: #eee;
+}
+.cartTab .listCart .item img{
+width: 60px;
+  height: 80px;
+  object-fit: cover;
+    margin-right: -20px;
+
+}
+.cartTab .listCart .item{ 
+  display: grid;
+  grid-template-columns: 70px 100px 40px 1fr;
+  gap: 10px;
+  text-align: center;
+  align-items: center;
+}
+.listCart .quantity span{
+display: inline-block;
+width: 20px;
+height: 20px;
+  background-color: #eee;
+  color: #555;
+  border-radius: 50%; 
+cursor: pointer;
+}
+.listCart .quantity span:nth-child(2){
+  background-color: transparent;
+  color: #eee;
+}
+.listCart .item:nth-child(even) {
+ background-color: #eee1;
+}
+.listCart{
+  overflow: auto;
+}
+.listCart::-webkit-scrollbar {
+  width: 0;
+}
+/* cart styling ends */
+
+
+
+
+    </style>
+</head>
+
+<body>
+   <nav>
+      <div class="nav-links">
+          <a href="home.html">Home</a>
+          <span class="divider"></span>
+          <a href="collection.html">Our Collection</a>
+          <span class="divider"></span>
+          <a href="aboutus.html">About Us</a>
+          <span class="divider"></span>
+          <a href="contact.php">Contact Us</a>
+          <span class="divider"></span>
+          <a href="Bbestsellers.html">Best Sellers</a>
+          <span class="divider"></span>
+      </div>
+      <div class="right-controls">
+          <!-- Theme Toggle Button -->
+          <button class="toggle-btn" onclick="toggleTheme()">
+            <i class="fas fa-moon"></i>
+          </button>
+    
+    
+          <div class="social-icons">
+              <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+              <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+              <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </nav>
+ 
+  <!-- header start -->
+    <div class="header-container">
+        <img src="images/logo/logo new.png" alt="Logo" class="logo">
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search Here ...">
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+<!-- icons -->
+        <div class="icons">
+  <i class="fas fa-heart"></i>
+ <a href="login.php">
+  <i class="fas fa-user"></i></a>
+  <i class="fas fa-shopping-cart icon-cart" >
+    <span id="cart-count" class="cart-badge">0</span>
+  </i>
+</div>
+</div>
+<!-- icons end -->
+ <!-- cart starts here -->
+ <div class="cartTab">
+  <h2>Shopping Cart</h2>
+  <div class="listCart">
+    <!-- 1st div start -->
+<div class="item"> 
+  <!-- 2nd div -->
+  <div class="image">
+    <img src="images/products/action n adventure/a thunder.jpg" alt="">
+  </div>
+  <!-- 2nd div end -->
+  <div class="name">
+    NAME
+  </div>
+  <div class="totalPrice">
+    RS 820/-
+  </div>
+  <div class="quantity">
+    <span class="minus"><</span>
+    <span>1</span>
+    <span class="plus">></span>
+  </div>
+</div>
+
+
+  </div>
+  <div class="btn">
+    <button class="close">CLOSE</button>
+    <button class="checkOut">CHECKOUT</button>
+  </div>
+
+ </div>
+ <!-- cart ends here -->
+  <button id="scrollToTop" onclick="scrollToTop()">⬆</button>
+
+  <section class="hero">
+    <h1>Which Book Do You Want to Read?</h1>
+    <p>Confused on what to read next? Take a look at our BEST SELLERS.</p>
+    <button> <a href="collection.html">Shop Now</button></a>
+  </section>
+  
+  <section class="books-section">
+    <div class="book">
+        <img src="images/bsellers/1.webp" alt="Hooked" />
+    </div>
+    <div class="book">
+        <img src="images/bsellers/2.webp" alt="Psychology of Money" />
+    </div>
+    <div class="book">
+        <img src="images/bsellers/f3.jpg" alt="Ego Is the Enemy" />
+    </div>
+    <div class="book">
+        <img src="images/bsellers/instagram-img-06.jpg" alt="Who Will Cry When You Die?" />
+    </div>
+</section>
+
+  <section class="stats">
+    <div class="stat-box">
+      <h2>30k+</h2>
+      <p>Explore 30,000+ books across diverse genres on our online bookstore.</p>
+    </div>
+    <div class="stat-box">
+      <h2>10k+</h2>
+      <p>Happy customers on our online bookstore.</p>
+    </div>
+  </section>
+<section class="best-sellers-section">
+  <h2>BEST SELLERS</h2>
+  <div class="best-sellers-grid">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/bsellers/bsellers boooks.webp" alt="Book 1" />
+          <h4>Curious</h4>
+          <p>By Philos Fableright</p>
+          <p>RS 800/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <button class="add-cart-btn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/bsellers/bsellers books2.webp" alt="Book 2" />
+          <h4>All that Really Matters</h4>
+          <p>By David Well</p>
+          <p>RS 899/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This book is loved by many for its storytelling.</p>
+          <button class="add-cart-btn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/bsellers/bsellers books3.jpg" alt="Book 3" />
+          <h4>AMARBAIL</h4>
+          <p>By Umera Ahmed</p>
+          <p>RS 1250/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>Highly rated for deep insights and clarity.</p>
+          <button class="add-cart-btn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/bsellers/bsellers books4.webp" alt="Book 4" />
+          <h4>The Man Made of Smoke</h4>
+          <p>By Alex North</p>
+          <p>RS 675/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>Great for beginners and highly recommended.</p>
+          <button class="add-cart-btn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/bsellers/bsellersbooks5.webp" alt="Book 4" />
+          <h4>The Last Thing He Told Me</h4>
+          <p>By Laura Dave</p>
+          <p>RS 999/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>Great for beginners and highly recommended.</p>
+          <button class="add-cart-btn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/bsellers/bsellers books6.webp" alt="Book 4" />
+          <h4>The Frozen River</h4>
+          <p>By Arial Lawhon</p>
+          <p>RS 850/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>Great for beginners and highly recommended.</p>
+          <button class="add-cart-btn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/bsellers/bsellersbooks7.webp" alt="Book 4" />
+          <h4>The Lost Bookshop</h4>
+          <p>By Evie Woods</p>
+          <p>RS 899/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>Great for beginners and highly recommended.</p>
+          <button class="add-cart-btn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/bsellers/bsellers books8.webp" alt="Book 4" />
+          <h4>The Nightingale</h4>
+          <p>By Kristin Hannah</p>
+          <p>RS 999/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>Great for beginners and highly recommended.</p>
+          <button class="add-cart-btn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+   
+<script>
+       
+    function toggleTheme() {
+    document.body.classList.toggle("light-mode");
+    const icon = document.querySelector(".toggle-btn i");
+    const isLightMode = document.body.classList.contains("light-mode");
+
+    // Save preference
+    localStorage.setItem("theme", isLightMode ? "light" : "dark");
+
+    // Update icon
+    icon.classList.remove(isLightMode ? "fa-moon" : "fa-sun");
+    icon.classList.add(isLightMode ? "fa-sun" : "fa-moon");
+}
+        window.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("theme");
+    const icon = document.querySelector(".toggle-btn i");
+
+    if (savedTheme === "light") {
+        document.body.classList.add("light-mode");
+        if (icon) {
+            icon.classList.remove("fa-moon");
+            icon.classList.add("fa-sun");
+        }
+    } else {
+        if (icon) {
+            icon.classList.remove("fa-sun");
+            icon.classList.add("fa-moon");
+        }
+    }
+});
+        
+        // Scroll to top smoothly
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+        // Cart functionality`~
+  let iconCart = document.querySelector('.icon-cart');
+  let closeCart = document.querySelector('.close');
+  let body = document.querySelector('body');
+
+  iconCart.addEventListener('click', () => {
+    body.classList.toggle('showCart')
+  }); 
+ closeCart.addEventListener('click', () => {
+    body.classList.toggle('showCart')
+  });
+// cart functionality end
+ </script>
+</body>
+</html>

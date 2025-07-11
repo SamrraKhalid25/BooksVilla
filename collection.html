@@ -1,0 +1,5923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection | Booksvilla</title>
+<link rel="icon" href="fav.icon.png" type="image/png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+  :root {
+   --primary-color: #ffffff;
+   --secondary-color: #FF3B30;
+   --background-color: linear-gradient(to right, #000000, #2a312c, #000000);
+   --button-hover: #E52020;
+   --sub-background: #000000;
+ }
+ 
+ .light-mode {
+   --primary-color: #000000;
+   --secondary-color: #8cc0d4;
+   --background-color: linear-gradient(to right, #aca7a7, #faeded, #aca7a7);
+   --button-hover: #8d8f96;
+   --sub-background: #9e9a9a;
+ }
+ 
+
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+ 
+ html {
+   scroll-behavior: smooth;
+ }
+ 
+ body {
+   font-family: 'Poppins', sans-serif;
+   font-weight: 700;
+   background: var(--background-color);
+   color: var(--primary-color);
+ }
+ 
+
+ nav {
+   display: flex;
+   justify-content: center; 
+   align-items: center; 
+   position: relative; 
+   flex-wrap: nowrap;
+   padding: 10px 20px;
+   position: sticky;
+   top: 0;
+   z-index: 1000;
+   backdrop-filter: blur(10px);
+   background: transparent;
+ }
+ 
+
+ .nav-links {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   display: flex;
+   flex-wrap: nowrap;
+   flex-direction: row;
+   justify-content: space-around; 
+   align-items: center; 
+   gap: 15px; 
+ }
+ 
+ .nav-links a {
+   text-decoration: none;
+   color: var(--primary-color);
+   font-size: 18px;
+   font-weight: bold;
+   padding: 10px 15px;
+   transition: color 0.3s ease;
+   white-space: nowrap; 
+   margin: 0 10px; 
+ }
+ 
+ .nav-links a:hover {
+   color: var(--button-hover);
+ }
+ 
+ .divider {
+   width: 2px;
+   height: 20px;
+   background-color: var(--secondary-color);
+ }
+ 
+
+ .right-controls {
+   margin-left: auto; 
+   display: flex;
+   align-items: center;
+   gap: 15px;
+ }
+ 
+
+ .toggle-btn {
+   background-color: var(--secondary-color);
+   color: var(--primary-color);
+   padding: 10px 14px;
+   border: none;
+   border-radius: 25px;
+   cursor: pointer;
+   font-weight: bold;
+   display: flex;
+   align-items: center;
+   transition: all 0.3s ease;
+ }
+ 
+ .toggle-btn:hover {
+   background-color: var(--button-hover);
+   transform: scale(1.05);
+   box-shadow: 0 0 10px var(--primary-color);
+ }
+ 
+
+ 
+ 
+
+ .social-icons {
+   display: flex;
+   gap: 10px;
+ }
+ 
+ .social-icons a {
+   color: var(--primary-color);
+   font-size: 24px;
+   transition: color 0.3s ease;
+   margin-right: 4px; 
+ }
+ 
+ .social-icons a:hover {
+   color: var(--button-hover);
+ }
+
+.search-container {
+   display: flex;
+   align-items: center;
+   border-radius: 20px;
+   overflow: hidden;
+   background-color: transparent;
+   margin: 0px; 
+    padding: 5px 0px;
+   width: 50%;
+   justify-content: center;
+   border: black 3px solid;
+}
+.highlight {
+    background-color: var(--secondary-color);
+    font-weight: bold;
+  }
+
+.search-input {
+   border: none;
+   outline: none;
+   padding: 10px;
+   font-size: 14px;
+   width: 100%; 
+   background: transparent;
+   color: var(--primary-color);
+}
+
+.search-btn {
+   background: var(--secondary-color);
+   border: none;
+   padding: 10px;
+   border-radius: 50%;
+   cursor: pointer;
+   color:var(--primary-color);
+   margin-left: 10px; 
+}
+.search-btn:hover {
+   background-color: var(--button-hover);
+   color: var(--primary-color);
+}
+
+.icons {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   margin-left: 15px;
+}
+
+.icons i {
+   color: var(--primary-color);
+   font-size: 20px;
+   margin: 0 10px;
+   cursor: pointer;
+   position: relative;
+}
+.icons i:hover {
+   color: var(--button-hover);
+}
+
+.cart-badge {
+   position: absolute; 
+   top: -8px; 
+   right: -10px;
+    background: red; 
+    color: white; 
+    font-size: 12px; 
+    padding: 2px 6px; 
+    border-radius: 50%;
+}
+
+
+
+.header-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 0; 
+   padding: 0; 
+   
+}
+#scrollToTop {
+   position: fixed;
+   bottom: 20px;
+   right: 20px;
+   width: 50px;
+   height: 50px;
+   background-color: var(--secondary-color);
+   color: white;
+   border: none;
+   border-radius: 50%;
+   font-size: 24px;
+   cursor: pointer;
+   display: none; /* Hidden by default */
+   transition: opacity 0.3s, transform 0.3s;
+}
+
+#scrollToTop:hover {
+   background-color: var(--button-hover);
+   color: var(--primary-color);
+   color: #0d0d2b;
+   transform: scale(1.05);
+   box-shadow: 0 0 15px var(--primary-color);
+}
+
+/* Media Queries for Adaptive Design */
+
+/* For tablets and small screens */
+@media (max-width: 768px) {
+  .container {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .card {
+    width: 45%; /* Adjust card width for smaller screens */
+    height: auto; /* Allow height to adjust dynamically */
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-container {
+    width: 100%;
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+  .container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .card {
+    width: 100%; /* Full width for mobile */
+    height: auto;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .search-container {
+    width: 100%;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .dropdown {
+    left: 0;
+  }
+}
+
+        h1 {
+          font-size: 3em;
+          font-family: "DynaPuff", system-ui;
+          font-optical-sizing: auto;
+          font-weight: 400;
+           font-style: normal;
+            text-align: center;
+            color: var(--primary-color);
+        }
+        h1 .highlightt {
+  color: var(--secondary-color); /* Orange */
+}
+        .h2 {
+          font-size: 25px;
+            text-align: center;
+            color: var(--primary-color);
+        }
+        .container {
+          justify-content: center;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .card {
+            position: relative;
+            width: 200px;
+            height: 350px; 
+            overflow: hidden;
+            border-radius: 15px; 
+            box-shadow: var(--sub-background) 0 4px 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 10px;
+            background-color: var(--sub-background);
+        }
+        .card img {
+            width: 80%;
+            height: 80%; 
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            border-radius: 15px 15px 0 0; 
+        }
+        .card p {
+            margin: 0;
+            padding: 5px;
+            font-size: 14px;
+            color: #333;
+            text-align: center;
+        }
+        .card button {
+            padding: 10px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            background-color: var(--secondary-color);
+            color: #000000;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+        .card button:hover {
+            background-color: #555;
+        }
+        .container:hover > :not(:hover) {
+            opacity: 0.3;
+        }
+        .card:hover {
+            transform: translateY(-10px); 
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+        }
+        .card:hover img {
+            transform: scale(1.1);
+        }
+        .collections-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 80px 30px;
+  justify-content: center;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  perspective: 1000px;
+  z-index: 1;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 340px;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: var(--sub-background);
+  backface-visibility: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.flip-card-front {
+  z-index: 2;
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: 70%;
+  object-fit: contain;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.flip-card-front h4 {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.flip-card-front p {
+  font-size: 14px;
+  margin: 2px 0;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  justify-content: center;
+}
+
+ .see-more-btn {
+  margin-top: 10px;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+.more-options {
+  margin-top: 12px;
+  transition: all 0.3s ease;
+}
+
+.more-options.hidden {
+  display: none;
+}
+
+.summary {
+  font-size: 13px;
+  margin: 10px 0;
+}
+
+.review-link {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #007BFF;
+  text-decoration: underline;
+  font-size: 13px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.add-cart-btn,
+.wishlist-btn {
+  padding: 6px 12px;
+  font-size: 13px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-cart-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.wishlist-btn {
+  background-color: #ff6b81;
+  color: white;
+}
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.icon-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+
+
+.hover-text {
+  position: absolute;
+  bottom: 130%; /* Show above the icon */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #222;
+  color: #fff;
+  padding: 5px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.icon-wrapper:hover .hover-text {
+  opacity: 1;
+}
+
+
+/* cart styling  */
+.cartTab {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 100vh;
+  background-color: #1c201b;
+  color: #eee;
+ transition: right 0.3s ease;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+  padding: 10px;
+  box-sizing: border-box;
+  z-index: 999;
+  inset: 90px -400px 0 auto;
+}
+
+body.showCart .cartTab {
+  inset: 55px 0 0 auto;
+}
+
+.cartTab h2 {
+  padding: 20px;
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+
+.listCart {
+  max-height: 500px;
+  overflow-y: auto;
+  padding: 10px;
+}
+.listCart::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.cartTab .listCart .item {
+  display: grid;
+  grid-template-columns: 70px 100px 40px 1fr;
+  gap: 10px;
+  text-align: center;
+  align-items: center;
+}
+
+.cartTab .listCart .item img {
+  width: 60px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: -20px;
+}
+
+.listCart .quantity span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #eee;
+  color: #555;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.listCart .quantity span:nth-child(2) {
+  background-color: transparent;
+  color: #eee;
+}
+
+.listCart .item:nth-child(even) {
+  background-color: #eee1;
+}
+
+#grand-total {
+  font-weight: bold;
+  margin: 10px 0;
+  text-align: center;
+  padding: 5px;
+  background-color: #222;
+}
+
+.cartTab .btn {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  padding: 20px 20px;
+}
+
+.cartTab .btn button {
+  background-color: var(--secondary-color);
+  border: none;
+  font-family: poppins, sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 10px 10px;
+}
+
+.cartTab .btn .close {
+  background-color: #eee;
+  color: black;
+}
+
+/* cart styling ends */
+
+/* pop up alert */
+.cart-alert {
+  position: fixed;
+  top: 60px;
+  right: 650px;
+  background: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.3s ease;
+}
+
+.cart-alert.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ends */
+/* wishlist tab styling */
+/* Wishlist Tab Hidden by Default */
+.wishlistTab {
+  position: fixed;
+  top: 0;
+  right: 0; /* Hidden off-screen */
+  width: 400px;
+  height: 100vh;
+  background: #1c201b;
+  color: #eee;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+  transition: right 0.3s ease;
+  z-index: 999;
+  padding: 10px;
+  box-sizing: border-box;
+  inset: 90px -400px 0 auto;
+  overflow-y: auto;
+}
+
+/* Wishlist Tab Visible when Active */
+.wishlistTab.active {
+  inset: 55px 0 0 auto;
+}
+
+.wishlistTab h2 {
+  padding: 20px;
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+
+/* Wishlist Item Style */
+.listWishlist {
+  max-height: 500px;
+  overflow-y: auto;
+  padding: auto;
+
+}
+.listWishlist::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+.wishlist-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+   text-align: center;
+  align-items: center;
+}
+
+.wishlist-item img {
+  width: 60px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 5px;
+ margin-right: -10px;
+
+}
+
+.wishlist-item h4 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.wishlist-item p {
+  margin: 2px 0;
+  font-size: 14px;
+  align-items: center;
+  justify-content: center;
+}
+
+.wishlist-item button {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 6px 8px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 2px;
+  transition: background-color 0.3s ease;
+  
+}
+
+.wishlist-item button.remove-wishlist {
+  background-color: #eee;
+  color: black;}
+.listWishlist .move-to-cart {
+  background-color: var(--secondary-color);
+}
+
+.listWishlist button:hover {
+  filter: brightness(1.1);
+}
+.wishlistFooter {
+  padding: 15px;
+  text-align: center;
+  border-top: 1px solid #333;
+}
+
+.closeWishlist {
+  background-color: var(--secondary-color); /* Use your theme color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-family: poppins, sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.closeWishlist:hover {
+  background-color: var(--button-hover);
+  transform: scale(1.05);
+  box-shadow: 0 0 10px var(--primary-color);
+}
+
+
+    </style>
+</head>
+
+
+<body class="">
+  <!-- navlinks -->
+    <nav>
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <span class="divider"></span>
+            <a href="collection.html">Our Collection</a>
+            <span class="divider"></span>
+            <a href="aboutus.html">About Us</a>
+            <span class="divider"></span>
+            <a href="contact.php">Contact Us</a>
+            <span class="divider"></span>
+            <a href="Bbestsellers.html">Best Sellers</a>
+            <span class="divider"></span>
+        </div>
+        <div class="right-controls">
+            <!-- Theme Toggle Button -->
+            <button class="toggle-btn" onclick="toggleTheme()">
+              <i class="fas fa-moon"></i>
+            </button>
+      
+      
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+              </div>
+            </div>
+          </nav>
+   <!-- header start -->
+    <div class="header-container">
+        <img src="images/logo/logo new.png" alt="Logo" class="logo">
+        <div class="search-container">
+       <input type="text" id="searchInput" class="search-input" placeholder="Search Here ..." onkeyup="filterBooks()">
+
+<button class="search-btn" onclick="filterBooks()"><i class="fas fa-search"></i></button>
+        </div>
+<!-- icons -->
+        <div class="icons">
+<i class="fas fa-heart" id="wishlist-toggle"></i>
+<a href="login.php">
+  <i class="fas fa-user"></i></a>  <i class="fas fa-shopping-cart icon-cart" >
+    <span id="cart-count" class="cart-badge">0</span>
+  </i>
+</div>
+</div>
+<!-- icons end -->
+ <!-- cart starts here -->
+  <!-- Cart Alert -->
+<div id="cart-alert" class="cart-alert"></div>
+ <div class="cartTab">
+  <h2>Shopping Cart</h2>
+  
+  <div class="listCart">
+    <!-- Cart items will be injected here by JS -->
+  </div>
+
+ <div class="cartFooter">
+    <div id="grand-total">Grand Total: RS 0/-</div>
+    <div class="btn">
+      <button class="close">CLOSE</button>
+      <button class="checkOut">CHECKOUT</button>
+    </div>
+  </div>
+</div>
+
+ <!-- cart ends here -->
+  <!-- wishist starts -->
+   <!-- Wishlist Tab -->
+    <div id="wishlist-alert" class="cart-alert"></div>
+<div class="wishlistTab">
+  <h2>Your Wishlist</h2>
+
+  <div class="listWishlist">
+    <!-- Wishlist items will appear here -->
+  </div>
+
+  <div class="wishlistFooter">
+    <button class="closeWishlist">Close</button>
+  </div>
+</div>
+
+<!-- ends -->
+    <button id="scrollToTop" onclick="scrollToTop()">⬆</button> 
+ 
+ <!-- category section starts -->
+      <h1><span>Our</span> <span class="highlightt">Collection
+      </span></h1>
+      <br>
+
+<div class="category-section">
+    <h1 class="h2" id="urduNovels"> Urdu Novels</h1>
+    <br>
+    <br>
+    <section class="collection-section">
+      <div class="collection-grid">
+    <div class="flip-card"
+    data-title="Jannat kay pattay"
+     data-price="1200"
+     data-author="Nemrah Ahmed"
+     data-image="images/products/urdu novels/jannat k pattay.jpg">
+     
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/urdu novels/jannat k pattay.jpg" alt="Jannat Kay Pattay" />
+          <h4>Jannat kay Pattay</h4>
+          <p>By Nemrah Ahmed </p>
+          <p>RS 1200/-</p>
+        </div>
+        <div class="flip-card-back">
+  <h4>Details</h4>
+  <p>This is a best-selling book with excellent reviews!</p>
+
+<button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> the story of Haya Suleman, a law student who faces a crisis when a private video of her surfaces online.
+    </p>
+    <a href="https://kitabnagri.org/jannat-ke-pattay-novel-by-nimra-ahmed/" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+
+ <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+
+
+</div>
+
+
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Amarbail"
+     data-price="1200"
+     data-author="Umera Ahmed"
+     data-image="images/products/urdu novels/amarbail.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/urdu novels/amarbail.jpg" alt="Amarbail" />
+          <h4>Amarbail</h4>
+          <p>By Umera Ahmed </p>
+          <p>RS 1200/-</p>
+        </div>
+        <div class="flip-card-back">
+  <h4>Details</h4>
+  <p>This is a best-selling book with excellent reviews!</p>
+
+<button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> Amarbail is a popular Urdu novel that follows the intense and emotional story of Umar Jahangir, a corrupt bureaucrat’s son, and Aleezay Sikandar, a simple, sensitive girl.
+    </p>
+    <a href="https://www.goodreads.com/book/show/7113292-amarbel" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+
+ <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+
+
+</div>
+
+
+      </div>
+    </div>
+
+    <div class="flip-card"
+    data-title="Bakht"
+    data-price="1450"
+    data-author="Mehrulnisa Shahmeer"
+    data-image="images/products/urdu novels/bakht.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/urdu novels/bakht.jpg" alt="Bakht" />
+          <h4>Bakht</h4>
+          <p>By Mehrulnisa Shahmeer </p>
+          <p>RS 1450/-</p>
+        </div>
+        <div class="flip-card-back">
+  <h4>Details</h4>
+  <p>This is a best-selling book with excellent reviews!</p>
+
+<button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> Bakht is a gripping novel that blends romance, suspense,& family drama. It follows Halay Sultan, who is kidnapped on her wedding day & later marries Umer Hayat, a principled police officer. 
+    </p>
+    <a href="https://www.goodreads.com/book/show/199507005-bakht" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+
+ <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+
+
+</div>
+
+
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Yeh Dil Mera"
+    data-price="2999"
+    data-author="Farhat Ishtiaq"
+    data-image="images/products/urdu novels/ye dil mera.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/urdu novels/ye dil mera.jpg" alt="Yeh Dil Mera" />
+          <h4>YEH DIL MERA</h4>
+          <p>By Farhat Ishtiaq</p>
+          <p>RS 2999/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This book is loved by many for its storytelling.</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> the story of Aina, a young woman haunted by her past, and Amaan, a man seeking revenge for his family's murder.
+    </p>
+    <a href="https://booksturner.pk/product/yeh-dil-mera-by-farhat-ishtiaq/" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+</div>
+
+
+      </div>
+    </div>
+    
+    <div class="flip-card"
+    data-title="Aab-e-Hayat"
+    data-price="1250"
+    data-author="Umera Ahmed"
+    data-image="images/products/urdu novels/aabe hayat.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/urdu novels/aabe hayat.jpg" alt="Aab-e-Hayat" />
+          <h4>AAB-E-HAYAAT</h4>
+          <p>By Umera Ahmed</p>
+          <p>RS 1250/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>Highly rated for deep insights and clarity.</p>
+           <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> The novel explores their married life, focusing on their children, their upbringing with a blend of religious and worldly knowledge, and the challenges they face.
+    </p>
+    <a href="https://studymoose.com/review-of-aab-e-hayat-by-umera-ahmad-essay" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Maala"
+    data-price="779"
+    data-author="Nemrah Ahmed"
+    data-image="images/products/urdu novels/malaa.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/urdu novels/malaa.jpg" alt="Maala" />
+          <h4>MAALA</h4>
+          <p>By NEMRAH AHMED</p>
+          <p>RS 779/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>Great for beginners and highly recommended.</p>
+          <!-- changess -->
+           <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> a story centered around Maala, a woman whose life is marked by hardship and unexpected turns.
+    </p>
+    <a href="https://play.google.com/store/apps/details?id=com.octagram.mala&hl=en" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+ <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Yaaram"
+    data-price="1499" 
+    data-author="Sumaira Ahmed"
+    data-image="images/products/urdu novels/yaram.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/urdu novels/yaram.jpg" alt="Yaaram" />
+          <h4>YAARAM</h4>
+          <p>By SUMAIRA AHMED</p>
+         <p>RS 1499/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>Great for beginners and highly recommended.</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> a tale of blind, selfless and unconditional love, friendship, devotion and loyalty.
+    </p>
+    <a href="https://pakonlinebooks.com/product/yaram-written-by-sumaira-ahmed/?srsltid=AfmBOopEIGO8q52qkYRYgHVpvVXt_2cRmZHq3242hoPUaA5Ud7IFtQgN" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+ <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Shehr-e-Zaat"
+    data-price="819"
+    data-author="Umera Ahmed"
+    data-image="images/products/urdu novels/shehre zaat.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/urdu novels/shehre zaat.jpg" alt="SHEHR-E-ZAAT" />
+          <h4>SHEHR-E-ZAAT</h4>
+          <p>By UMERA AHMED</p>
+          <p>RS 819/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>Great for beginners and highly recommended.</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> a young woman named Falak's spiritual awakening and self-discovery journey.
+    </p>
+    <a href="https://www.goodreads.com/en/book/show/15778941-shahr-e-zaat" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Khuda Aur Mohabbat"
+    data-price="700"
+    data-author="Hashim Nadeem"
+    data-image="images/products/urdu novels/khuda aur mohabbat.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/urdu novels/khuda aur mohabbat.jpg" alt="KHUDA AUR MOHABBAT" />
+          <h4>KHUDA AUR MOHABBAT</h4>
+          <p>By HASHIM NADEEM</p>
+         <p>RS 700/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>Great for beginners and highly recommended.</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> explores the themes of love, faith, and sacrifice.
+    </p>
+    <a href="https://www.goodreads.com/book/show/16046385-khuda-aur-mohabbat" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Dil Aur Pathar"
+    data-price="1080"
+    data-author="Razia Butt"
+    data-image="images/products/urdu novels/dil aur pathar.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/urdu novels/dil aur pathar.jpg" alt="DIL AUR PATTHAR" />
+          <h4>DIL AUR PATHAR</h4>
+          <p>By RAZIA BUTT</p>
+          <p>RS 1080/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>Great for beginners and highly recommended.</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong>  The story explores how the diamond, despite its beauty and value, brings misfortune and hardship to the family. Ultimately, the narrative suggests that even with hardships, things work out for the best.
+    </p>
+    <a href="https://www.rekhta.org/ebooks/detail/dil-aur-patthar-razia-butt-ebooks" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+ <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+    
+    <br>
+    <br>
+
+<div class="category-section">
+    <h1 class="h2" id="urduPoetry">Urdu Poetry</h1>
+    <br>
+    <br>
+
+    <section class="collection-section">
+      <div class="collection-grid">
+    <div class="flip-card"
+    data-title="Chalo Phir Laut Jatey Hain"
+     data-price="890"
+     data-author="Syed Aqeel Shah"
+     data-image="images/products/urdu poetry/chalo phir lot chlty hain.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/urdu poetry/chalo phir lot chlty hain.jpg" alt= "CHALO PHIR LOUT CHALTAY HAIN" />
+          <h4>Chalo Phir Laut Jatey Hain</h4>
+          <p>By Syed Aqeel Shah</p>
+                    <p>RS 890/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> a collection of poems exploring themes of love, loss, and the human condition.
+    </p>
+    <a href="https://archive.org/details/pdfy-xQuH8Go2OumyVt4y" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Unwan-E-Dard"
+     data-price="900"
+     data-author="Dr M.Ali Raza"
+     data-image="images/products/urdu poetry/unwan e dard.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/urdu poetry/unwan e dard.jpg"  alt="Unwan-E-Dard" />
+          <h4>Unwan-E-Dard</h4>
+          <p>By Dr M.Ali Raza </p>
+                <p>RS 900/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> The book contains poems that express feelings of love and heartbreak, reflecting a deeply personal and emotional experience. 
+    </p>
+    <a href="https://www.slideshare.net/slideshow/unwanedard-urdu-sad-poetry-book-written-by-muhammad-ali-raza-dard-first-love-poetry-poetry-dedicate-to-lover-azrah-mukhtar-zainab/60599468" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+ <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card"
+    data-title="Dewan-E-Ghalib"
+    data-price="360"
+    data-author="Mirza Asad-ul-Allah Khan Ghalib"
+    data-image="images/products/urdu poetry/deewan e ghalib.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src= "images/products/urdu poetry/deewan e ghalib.jpg" alt="Dewan-E-Ghalib" />
+          <h4>Dewan-E-Ghalib</h4>
+          <p>By Mirza Asad-ul-Allah Khan Ghalib </p>
+          <p>RS 360/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> a collection of his Urdu ghazals, showcasing his mastery of the poetic form.
+    </p>
+    <a href="https://booksturner.pk/product/diwan-e-ghalib-by-mirza-asadullah-khan-ghalib/" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Shayad"
+    data-price="389"
+    data-author="Jaun Elia"
+    data-image="images/products/urdu poetry/shayd jaun elia.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src= "images/products/urdu poetry/shayd jaun elia.jpg" alt="Shayad" />
+          <h4>Shayad</h4>
+          <p>By Jaun Elia</p>
+          <p>RS 389/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> showcases his unique voice and explores existentialism, pessimism, and the human condition.
+    </p>
+    <a href="https://www.rekhta.org/nazms/shaayad-main-shaayad-tum-ko-yaksar-bhuulne-vaalaa-huun-jaun-eliya-nazms" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card"
+    data-title="Gumaan"
+    data-price="750"
+    data-author="Jaun Elia"
+    data-image="images/products/urdu poetry/guman.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src= "images/products/urdu poetry/guman.jpg" alt="Gumaan" />
+          <h4>Gumaan</h4>
+          <p>By Jaun Elia</p>
+          <p>RS 750/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> explores themes of doubt, disillusionment, and existential angst.
+    </p>
+    <a href="https://www.goodreads.com/en/book/show/11142774-gumaan" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+ <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card"
+    data-title="Ruswai ki Satwi Simt"
+     data-price="345"
+     data-author="Ali Asif"
+     data-image="images/products/urdu poetry/ruswai ki satwi simt.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src= "images/products/urdu poetry/ruswai ki satwi simt.jpg" alt="Ruswai ki Satwin simt" />
+          <h4>Ruswai ki Satwin Simt </h4>
+          <p>By Ali Asif</p>
+          <p>RS 345/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> The series focuses on Sameera, a young doctor, who faces a traumatic event (kidnapping and rape) and the subsequent challenges in her family and social life. Her family's rejection and her husband's mistreatment highlight the social stigma surrounding sexual assault and the struggle for dignity amidst adversity.
+    </p>
+    <a href="#" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card"
+    data-title="Inkaar"
+     data-price="1349"
+     data-author="Parveen Shakir"
+     data-image="images/products/urdu poetry/inkar parveen shakir.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src= "images/products/urdu poetry/inkar parveen shakir.jpg" alt="Inkaar" />
+          <h4>Inkaar </h4>
+          <p>By Parween Shakir</p>
+          <p>RS 1349/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong>  It's known for its romantic themes, exploration of love and its complexities, and use of natural imagery to convey emotions.
+    </p>
+    <a href="https://www.goodreads.com/book/show/7454590-inkaar" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="flip-card"
+    data-title="Yaani"
+     data-price="999"
+     data-author="Joun Elia"
+     data-image="images/products/urdu poetry/yaani.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src= "images/products/urdu poetry/yaani.jpg" alt="Yaani" />
+          <h4>Yaani</h4>
+          <p>By Joun Elia</p>
+          <p>RS 999/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> It explores themes of love, existentialism, sorrow, and rebellion through Jaun Elia's distinctive voice, captivating readers with its raw honesty and thought-provoking verses
+    </p>
+    <a href="#" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+    </div>
+    <br>
+<br>
+
+<div class="category-section">
+    <h1 class="h2" id="childrenBooks">Children Books</h1>
+    <br>
+    <br>
+    <section class="collection-section">
+      <div class="collection-grid">
+    <div class="flip-card"
+    data-title="The Cat in the Hat"
+    data-price="1390"
+    data-author="Dr Seuss"
+    data-image="images/products/children books/the cat in the hat.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/children books/the cat in the hat.jpg"  alt="The Cat in the hat" />
+          <h4>The Cat In The Hat </h4>
+          <p>By Dr Seuss</p>
+          <p>RS 1390/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> On a rainy day, a mischievous Cat in the Hat visits two bored children, Sally and her brother, while their mother is out. The Cat entertains them with tricks and chaos, creating a huge mess, before quickly cleaning it all up just before their mother returns. 
+
+    </p>
+    <a href="https://dsenglishteamweb.files.wordpress.com/2020/02/kupdf.net_dr-seuss-the-cat-in-the-hat-book-pdf1.pdf" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="flip-card"
+    data-title="The Gruffalo"
+    data-price="1568"
+    data-author="Jeha"
+    data-image="images/products/children books/the gruffalo.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src= "images/products/children books/the gruffalo.jpg" alt="the gruffalo" />
+          <h4>The Gruffalo</h4>
+          <p>By Jeha </p>
+          <p>RS 1568/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> A mouse cleverly invents a fearsome monster called the Gruffalo to scare away other animals in the woods. When he actually encounters a Gruffalo, he convinces it he's the scariest creature, using the same description to fool the other animals, who then flee from the Gruffalo, making it afraid as well. 
+
+    </p>
+    <a href="https://online.pubhtml5.com/bbar/wbrs/" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+ <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card"
+    data-title="Where Is My Shoe"
+    data-price="999"
+    data-author="Ounla Santi"
+    data-image="images/products/children books/where is my shoe.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src= "images/products/children books/where is my shoe.jpg" alt="where is my shoe" />
+          <h4>Where Is My Shoe</h4>
+          <p>By Ounla Santi</p>
+         <p>RS 999/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> William is all ready to go with mom to the grocery store, with one exception. He cannot find his shoe. Walk with William as he relives his day to come up with the answer.
+    </p>
+    <a href="https://www.goodreads.com/book/show/23004171-where-is-my-shoe" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+       
+    
+    <div class="flip-card"
+    data-title="Hello World Kids"
+    data-price="775"
+    data-author="Ounla Santi"
+    data-image="images/products/children books/hello kids.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src= "images/products/children books/hello kids.jpg" alt="hello kids" />
+          <h4>Hello World Kids</h4>
+          <p>By Ounla Santi</p>
+          <p>RS 775/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> Hello, World! makes learning fun for young children.
+    </p>
+    <a href="https://www.goodreads.com/book/show/60372379-hello-world-snow#:~:text=Told%20in%20clear%20and%20easy,toddler%2C%20where%20learning%20never%20stops." class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="flip-card"
+    data-title="Wilma Jean The Worry Machine"
+    data-price="799"
+    data-author="Julia Cook"
+    data-image="images/products/children books/wilma jean.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src= "images/products/children books/wilma jean.jpg" alt="wilma jean" />
+          <h4>Wilma Jean The Worry Machine</h4>
+          <p>By Julia Cook</p>
+           <p>RS 799/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> addresses the problem of anxiety in a way that relates to children of all ages.
+    </p>
+    <a href="https://books.google.com/books/about/Wilma_Jean_the_Worry_Machine.html?id=R87UygAACAAJ" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="flip-card"
+    data-title="Dragons On The Inside"
+    data-price="888"
+    data-author="Veletie Coulman"
+    data-image="images/products/children books/dragons on the inside.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src= "images/products/children books/dragons on the inside.jpg" alt="dragons on the inside" />
+          <h4>Dragons On The Inside</h4>
+          <p>By veletie coulman</p>
+          <p>RS 888/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong>  validates young children's emotions and helps them recognize, describe, and cope when they are anxious or overwhelmed on the inside.
+    </p>
+    <a href="https://lets.shopbooksweet.com/item/_CNLg88qvkNwAJwKLAbjHQ/lists/LJURDgpqfKnI/" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+       
+
+    <div class="flip-card"
+    data-title="Erik The Lone Wolf"
+    data-price="1280"
+    data-author="Saran Finan"
+    data-image="images/products/children books/eric the lone wolf.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src= "images/products/children books/eric the lone wolf.jpg" alt="erik the lone wolf" />
+          <h4>Erik The Lone Wolf</h4>
+          <p>By Saran Finan</p>
+          <p>RS 1280/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> Erik lives in a pack of wolves, and that's a problem for him. He wants to do his own thing and only answer to himself. So, one day, he decides to do just that. He loves his new freedom, but will he learn that he needs the pack or will his newfound independence be his new normal.
+
+    </p>
+    <a href="https://www.goodreads.com/book/show/36263001-erik-the-lone-wolf" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card"
+    data-title="The Gingerbread Man"
+    data-price="2250"
+    data-author="Lelly Sam"
+    data-image="images/products/children books/the gingerbread man.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src= "images/products/children books/the gingerbread man.jpg" alt="the gingerbread man" />
+          <h4>The Gingerbread Man</h4>
+          <p>By Lelly Sam</p>
+          <p>RS 2250/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> A gingerbread man comes to life and runs away from the old woman who baked him, boasting he can't be caught. He's chased by various people and animals until a fox tricks him into sitting on its nose to cross a river, then eats him. 
+
+    </p>
+    <a href="http://www.libertybooks.com/the-gingerbread-man-(listen-and-learn-stories)-(bb)" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card"
+    data-title="Deer Run Home"
+    data-price="450"
+    data-author="Clare LeZotte"
+    data-image="images/products/children books/deer run home.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src= "images/products/children books/deer run home.jpg" alt="deer run home" />
+          <h4>Deer Run Home</h4>
+          <p>By Clare LeZotte</p>
+                    <p>RS 450/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> the story of a young, neglected deaf girl who finds her voice and courage with the support of trustworthy friends and a new passion for writing poems.
+    </p>
+    <a href="https://www.goodreads.com/book/show/202772969-deer-run-home" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </section>
+</div>
+    <br>
+    <br>
+
+<div class="category-section">
+    <h1 class="h2" id="harryPotterBooks">Harry Potter Books</h1>
+    <br>
+    <br>
+    <section class="collection-section">
+      <div class="collection-grid">
+    <div class="flip-card"
+    data-title="Harry Potter & The Philosopher's Stone"
+    data-price="350"
+    data-author="J.K Rowling"
+    data-image="images/products/harry potter books/h potter and the philosopher stone.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/harry potter books/h potter and the deadly hallows.jpg"  alt="deadly hallows" />
+          <h5>Harry Potter & The Deadly Hallows</h5>
+          <p>J.K Rowling</p>
+         <p>RS 350/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> Without the guidance and protection of their professors, Harry (Daniel Radcliffe), Ron (Rupert Grint) and Hermione (Emma Watson) begin a mission to destroy the Horcruxes, the sources of Voldemort's immortality. Though they must rely on one another more than ever, dark forces threaten to tear them apart. Voldemort's Death Eaters have seized control of the Ministry of Magic and Hogwarts, and they are searching for Harry -- even as he and his friends prepare for the ultimate showdown.
+
+    </p>
+    <a href="https://www.goodreads.com/book/show/58613224-harry-potter-and-the-deathly-hallows" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="flip-card"
+    data-title="Harry Potter & The Chamber Of Secrets"
+    data-price="1200"
+    data-author="J.K Rowling"
+    data-image="images/products/harry potter books/chamber of secrets.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src= "images/products/harry potter books/chamber of secrets.jpg" alt="chamber of secrets" />
+          <h5>Harry Potter & The Chamber Of Secrets</h5>
+          <p>J.K Rowling</p>
+          <p>RS 1200/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> The second instalment of boy wizard Harry Potter's adventures at Hogwarts School of Witchcraft and Wizardry, based on the novel by JK Rowling. A mysterious elf tells Harry to expect trouble during his second year at Hogwarts, but nothing can prepare him for trees that fight back, flying cars, spiders that talk and deadly warnings written in blood on the walls of the school.
+
+    </p>
+    <a href="https://www.goodreads.com/book/show/15881.Harry_Potter_and_the_Chamber_of_Secrets" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card"
+    data-title="Harry Potter And The Half Blood Prince"
+    data-price="350"
+    data-author="J.K Rowling"
+    data-image="images/products/harry potter books/half blood prince.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src= "images/products/harry potter books/half blood prince.jpg" alt="half blood prince" />
+          <h5>Harry Potter And The Half Blood Prince </h5>
+          <p>J.K Rowling</p>
+         <p>RS 350/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> As Death Eaters wreak havoc in both Muggle and Wizard worlds, Hogwarts is no longer a safe haven for students. Though Harry suspects there are new dangers lurking within the castle walls, Dumbledore is more intent than ever on preparing the young wizard for the final battle with Voldemort. Teenage hormones run rampant through Hogwarts, presenting a different sort of danger. 
+
+    </p>
+    <a href="https://www.sparknotes.com/lit/potter6/summary/" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="flip-card"
+    data-title="Harry Potter And The Soccerer's Stone"
+    data-price="750"
+    data-author="J.K Rowling"
+    data-image="images/products/harry potter books/socerers stone.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src= "images/products/harry potter books/socerers stone.jpg" alt="Soccerer's stone" />
+          <h5>Harry Potter And The Soccerer's Stone </h5>
+          <p>J.K Rowling</p>
+          <p>RS 750/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> Adaptation of the first of J.K. Rowling's popular children's novels about Harry Potter, a boy who learns on his eleventh birthday that he is the orphaned son of two powerful wizards and possesses unique magical powers of his own. He is summoned from his life as an unwanted child to become a student at Hogwarts, an English boarding school for wizards. There, he meets several friends who become his closest allies and help him discover the truth about his parents' mysterious deaths.
+
+    </p>
+    <a href="https://www.sparknotes.com/lit/harrypotter/summary/" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+ <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+  
+       
+
+    <div class="flip-card"
+    data-title="Harry Potter And The Goblet Of Fire"
+    data-price="450"
+    data-author="J.K Rowling"
+    data-image="images/products/harry potter books/goblet of fire.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src= "images/products/harry potter books/prisoner of azkaban.jpg" alt="prisoner of azkaban" />
+          <h5>Harry Potter And The Prisionor Of Azkerban</h5>
+          <p>J.K Rowling</p>
+           <p>RS 449/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> Harry Potter's (Daniel Radcliffe) third year at Hogwarts starts off badly when he learns deranged killer Sirius Black (Gary Oldman) has escaped from Azkaban prison and is bent on murdering the teenage wizard. While Hermione's (Emma Watson) cat torments Ron's (Rupert Grint) sickly rat, causing a rift among the trio, a swarm of nasty Dementors is sent to protect the school from Black. A mysterious new teacher helps Harry learn to defend himself, but what is his secret tie to Sirius Black?
+
+    </p>
+    <a href="https://www.sparknotes.com/lit/potter3/summary/" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </section>
+</div>
+    <br>
+    <br>
+
+   <div class="category-section">
+    <h1 class="h2" id="autobiography">Autobiography</h1>
+    <br>
+    <br>
+    <section class="collection-section">
+      <div class="collection-grid">
+    <div class="flip-card"
+    data-title="At Home With Muhammad Ali"
+    data-price="2163"
+    data-author="Hana Ali"
+    data-image="images/products/autobiography/M ALI.jpg">
+
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/autobiography/M ALI.jpg"  alt="m ali" />
+          <h5>At Home With Muhammad Ali</h5>
+          <p>Hana Ali</p>
+           <p>RS 2163/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> offers an intimate glimpse into the life of her father, the legendary boxer Muhammad Ali, beyond the public figure
+    </p>
+    <a href="https://seattlebookmamablog.org/2020/04/29/at-home-with-muhammad-ali-by-hana-ali/" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="I AM MALALA"
+    data-price="1245"
+    data-author="MALALA YOUSUFZAI"
+    data-image="images/products/autobiography/I AM MALALA.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/autobiography/I AM MALALA.webp"  alt="m ali" />
+          <h4>I AM MALALA</h4>
+          <p>MALALA YOUSUFZAI</p>
+           <p>RS 1245/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> detailing her fight for girls' education in Pakistan, her activism against the Taliban's restrictions on female education, and the assassination attempt she survived
+    </p>
+    <a href="https://makeheadway.com/library/books/i-am-malala-summary/" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+ <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+<div class="flip-card"
+    data-title="ELON MUSK"
+    data-price="700"
+    data-author="ASHLEE VANCE"
+    data-image="images/products/autobiography/ELON MUSK.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/autobiography/ELON MUSK.jpg"  alt="m ali" />
+          <h4>ELON MUSK</h4>
+          <p>BY ASHLEE VANCE</p>
+           <p>RS 700/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> a biography that chronicles the life and career of the innovative entrepreneur, from his childhood in South Africa to his current ventures at SpaceX, Tesla, and SolarCity. 
+    </p>
+    <a href="https://ig.ft.com/sites/business-book-award/books/2015/longlist/elon-musk-by-ashlee-vance/" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="LONG WALK TO FREEDOM"
+    data-price="750"
+    data-author="NELSON MANDELA"
+    data-image="images/products/autobiography/NELSON MANDELA.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/autobiography/NELSON MANDELA.jpg"  alt="m ali" />
+          <h4>LONG WALK TO FREEDOM</h4>
+          <p>BY NELSON MANDELA</p>
+         <p>RS 750/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> detailing his life from childhood in rural South Africa, through his 27 years in prison for fighting against apartheid, to his presidency and the dismantling of the apartheid system
+    </p>
+    <a href="https://en.wikipedia.org/wiki/Long_Walk_to_Freedom" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+ <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="MOTHER TERESSA"
+    data-price="2200"
+    data-author="Kathryn Spink"
+    data-image="images/products/autobiography/Mother teressa book.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src= "images/products/autobiography/Mother teressa book.jpg" alt="mother teressa" />
+          <h4>Mother Teresa</h4>
+          <p>Kathryn Spink</p>
+          <p>RS 2200/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> A decent look at the life of one of the world's most cherished figures. Mother Teresa felt God's call on her life to serve the poor of Calcutta and, in turn, the world.
+    </p>
+    <a href="https://stpatricksguild.com/mother-teresa-biography-spink-kathryn/?srsltid=AfmBOopJceA9VkYaxpD06NrrJ7AwmoZceW_bj73OeEKgstR0W3WQk9Uj" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Benazir Bhutto Daughter Of The East"
+    data-price="449"
+    data-author="Benazir Bhutto"
+    data-image="images/products/autobiography/benazir bhutto book.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src= "images/products/autobiography/benazir bhutto book.jpg" alt="Benazir bhutto" />
+          <h5>Benazir Bhutto Daughter Of The East</h5>
+          <p>Benazir Bhutto</p>
+           <p>RS 449/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> "Daughter of the East" is the autobiography of Benazir Bhutto, Pakistan's first female Prime Minister. The book details her privileged upbringing, her family's political legacy, her education at Harvard and Oxford, her father's execution by the military regime, and her own struggles against authoritarian rule.
+    </p>
+    <a href="https://www.linkedin.com/pulse/book-review-daughter-east-benazir-bhutto-m-umer-aijaz-aijaz" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    </div>
+        </section>
+</div>
+    <br>
+<br>
+<div class="category-section">
+    <h1 class="h2" id="englishBooks">English Books</h1>
+    <br>
+    <br>
+
+    <section class="collection-section">
+      <div class="collection-grid">
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/english/hide nseek.webp"  alt="hide n seek" />
+          <h4>Hide And Seek </h4>
+          <p>By Olivia Wilson</p>
+         <p>RS 1349/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> At Zee's welcome home party, Justin and the neighborhood crew play hide and seek. But it goes wrong. Very wrong. And one by one, everyone who plays the game disappears, pulled into a world of nightmares come to life.
+    </p>
+    <a href="https://www.goodreads.com/book/show/511629.Hide_and_seek" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+ <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card"
+    data-title="Soul"
+    data-price="479"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/soul.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/english/soul.jpg"  alt="soul" />
+          <h4>Soul </h4>
+          <p>By Olivia Wilson</p>
+          <p>RS 479/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> Joe is a middle-school band teacher whose life hasn't quite gone the way he expected. His true passion is jazz -- and he's good. But when he travels to another realm to help someone find their passion, he soon discovers what it means to have soul.
+
+    </p>
+    <a href="https://whatkeptmeup.com/latest-nigerian-movies/movie-review-soul-2020/" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card"
+    data-title="Walk into the shadows"
+    data-price="2928"
+    data-author="Estelle Darcy"
+    data-image="images/products/english/walk into the shadow.webp">
+   
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/english/walk into the shadow.webp"  alt="walk into the shadow" />
+          <h4>Walk Into The Shadow</h4>
+          <p>By Estelle Darcy</p>
+          <p>RS 2928/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> As ancient forces awaken and the line between good and evil blurs, Adeline must confront not only the shadows but also the truths buried deep within her own soul.
+    </p>
+    <a href="https://www.goodreads.com/book/show/9475927-walk-in-the-shadows" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="flip-card"
+    data-title="The Sound Of Waves"
+    data-price="1781"
+    data-author="Samira Hadid"
+    data-image="images/products/english/the sound.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/english/the sound.jpg"  alt="the sound of Waves" />
+          <h4>The Sound Of Waves </h4>
+          <p>By Samira Hadid</p>
+         <p>RS 1781/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong>  a novel about young love on a remote Japanese island.
+    </p>
+    <a href="https://www.goodreads.com/book/show/62805.The_Sound_of_Waves" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Lost In Dark Wood"
+    data-price="2095"
+    data-author="Samira Hadid"
+    data-image="images/products/english/lost.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/english/lost.jpg"  alt="lost" />
+          <h4>Lost In Dark Wood</h4>
+          <p>By Samira Hadid</p>
+           <p>RS 2095/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> refers to the opening of Dante Alighieri's Inferno, where the protagonist finds himself lost in a dark forest, symbolizing a state of spiritual and moral confusion.
+    </p>
+    <a href="https://www.goodreads.com/book/show/23346377-in-a-dark-dark-wood" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+ <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card"
+    data-title="Dark Promises"
+    data-price="750"
+    data-author="Samira Hadid"
+    data-image="images/products/english/dark.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/english/dark.jpg"  alt="dark promises" />
+          <h4>Dark Promises</h4>
+          <p>By Samira Hadid</p>
+          <p>RS 750/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> a politician, Keir, needs to clean up his image and feigns a relationship with Rowan to appeal to voters.
+    </p>
+    <a href="https://goodbadandunread.com/2016/03/21/review-dark-promises-by-christine-feehan/" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+       
+    <div class="flip-card"
+    data-title="Land Of Sorrow"
+    data-price="449"
+    data-author="Samira Hadid"
+    data-image="images/products/english/land of sorrow.jpg">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/english/land of sorrow.jpg"  alt="land of sorows" />
+          <h4>Land Of Sorrow</h4>
+          <p>By Samira Hadid</p>
+           <p>RS 449/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> Members of a family deal with the Vietnam War, as it ravages their homeland.
+
+    </p>
+    <a href="https://letterboxd.com/film/land-of-sorrows/" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/english/darkness waits.jpg"  alt="darkness waits" />
+          <h4>Darkness Waits</h4>
+          <p>RS 302/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> Five college students embark on a paranormal investigation of Dead Woman's Hollow Road, a hub for strange phenomena and mysterious deaths along the Appalachian Trail. The probe turns deadly when people in their camp begin dying.
+
+    </p>
+    <a href="https://www.imdb.com/title/tt3341778/plotsummary/" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/english/forgotten jungle.jpg"  alt="forgotten jungle" />
+          <h4>Forgotten Jungle</h4>
+          <p>By Peter Swift</p>
+           <p>RS 500/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> depicts the harsh realities faced by immigrant workers in Chicago's meatpacking industry. 
+    </p>
+    <a href="https://www.kirkusreviews.com/book-reviews/amanda-wood/forgotten-jungle/" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>  
+    </div>
+        </section>
+</div>
+    <br>
+    <br>
+
+<div class="category-section">
+    <h1 class="h2" id="englishPoetry">English Poetry</h1>
+    <br>
+    <br>
+
+    <section class="collection-section">
+      <div class="collection-grid">
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/english poetry/i dont love uou anymore.jpg"  alt="hide n seek" />
+          <h4>I DONT LOVE YOU ANYMORE  </h4>
+          <p>By RITHVIK SINGH</p>
+           <p>RS 199/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong>  a poignant exploration of the intricacies of love, loss, and the journey of self-healing.
+    </p>
+    <a href="https://medium.com/@ssubhankar/i-dont-love-you-anymore-by-rithvik-singh-a-profound-journey-through-heartbreak-and-healing-0812a99654a2#:~:text=I%20Don't%20Love%20You%20Anymore%20by%20Rithvik%20Singh%20is,emotional%20aftermath%20of%20a%20breakup." class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/english poetry/john clare selected poems.jpg"  alt="hide n seek" />
+          <h4>JOHN CLARE'S POEMS</h4>
+          <p>By JOHN CLARE</p>
+         <p>RS 720/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong>  known for its vivid portrayal of the English countryside, its exploration of rural life, and its deep emotional connection to nature and the changing landscape.
+    </p>
+    <a href="https://www.gradesaver.com/john-clare-poetry/study-guide/summary" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+ <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/english poetry/john donne poetry.jpg"  alt="hide n seek" />
+          <h4>JOHN DONNES'S POETRY </h4>
+          <p>By JOHN DONNE</p>
+           <p>RS 720/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> known for its metaphysical style, characterized by intellectual complexity, elaborate metaphors (conceits), and exploration of themes like love, death, and religion. 
+    </p>
+    <a href="https://study.com/academy/lesson/john-donne-poetry-analysis-lesson-quiz.html" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+ <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/english poetry/sun in days.jpg"  alt="hide n seek" />
+          <h4>SUN IN DAYS </h4>
+          <p>By MEGHAN O'ROURKE</p>
+          <p>RS 990/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> explores themes of illness, loss, and the resilience of the human spirit. 
+    </p>
+    <a href="https://guardianbookshop.com/sun-in-days-9780393356663/" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/english poetry/third poetry book.jpg"  alt="hide n seek" />
+          <h4>A THIRD POETRY BOOK
+          </h4>
+          <p>By M.A. WOODS</p>
+          <p>RS 790/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> a collection that explores profound themes of life, death, love, and the human experience through a series of introspective poems.
+    </p>
+    <a href="https://coloradoreview.colostate.edu/reviews/three-poems/" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    </div>
+        </section>
+</div>
+<br>
+<div class="category-section">
+
+        <h1 class="h2" id="fiction">Fiction </h1>
+        <br>
+        
+         <section class="collection-section">
+      <div class="collection-grid">
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/fiction books/all the light.jpg"  alt="all the light" />
+          <h4>ALL THE LIGHT WE CAN'T SEE </h4>
+          <p>By Anthony Doerr</p>
+          <p>RS 4984/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong>  It tells the intertwined stories of Marie-Laure, a blind French girl, and Werner, a German orphan boy, as they navigate the challenges of war and occupation.
+    </p>
+    <a href="https://www.sparknotes.com/lit/all-the-light/summary/" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/fiction books/role of thunder.jpg"  alt="role of thunder" />
+          <h4>ROLE OF THUNDER HEAR MY CRY</h4>
+          <p>By Mildred D. TAYLOR</p>
+           <p>RS 349/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong>  a coming-of-age novel set in the 1930s rural Mississippi, following the Logan family's struggles against racial injustice and economic hardship during the Great Depression. 
+    </p>
+    <a href="https://en.wikipedia.org/wiki/Roll_of_Thunder,_Hear_My_Cry" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+ <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/fiction books/the calculation starts.jpg"  alt="walk into the shadow" />
+          <h4>The CALCULATING STARS</h4>
+          <p>By MARY ROBINETTE KOWAL</p>
+         <p>RS 1571/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> a meteor strike in 1952 devastates the East Coast of the United States, triggering climate change and a race to colonize space.
+    </p>
+    <a href="https://www.goodreads.com/book/show/33080122-the-calculating-stars" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+ <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/fiction books/the poppy war.jpg"  alt="the sound of Waves" />
+          <h4>THE POPPY WAR </h4>
+          <p>By R.F. KUANG</p>
+         <p>RS 1067/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> follows Rin, a war orphan, who discovers she has shamanic powers and attends a military academy.
+    </p>
+    <a href="https://en.wikipedia.org/wiki/The_Poppy_War" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/fiction books/the vines.jpg"  alt="lost" />
+          <h4>The Vines</h4>
+          <p>By Shelly Holden</p>
+          <p>RS 950/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> a state of confusion, disorientation, or being lost in a difficult or dangerous situation, often with a sense of unease or mystery. 
+    </p>
+    <a href="https://parthsiddhpura.fandom.com/wiki/Lost_In_The_Dark_Wood" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+<div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    </div>
+        </section>
+</div>
+        
+        <div class="category-section">
+        <h1 class="h2" id="scienceFiction">SCIENCE FICTION</h1>
+        <br>
+        
+         <section class="collection-section">
+      <div class="collection-grid">
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/science fiction/451.jpg"  alt="all the light" />
+          <h4>451</h4>
+          <p>By RAY BRADBURY</p>
+          <p>RS 750/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> a dystopian novel set in a future where books are outlawed and burned by "firemen.
+    </p>
+    <a href="https://www.sparknotes.com/lit/451/plot-analysis/" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+
+     <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/science fiction/1984.gif"  alt="all the light" />
+          <h4>1984</h4>
+          <p>By GEORGE ORWELL</p>
+          <p>RS 449/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> Winston Smith lives in Oceania, a totalitarian state controlled by the Party and its omnipresent leader, Big Brother
+    </p>
+    <a href="https://study.com/learn/lesson/1984-george-orwell-summary-analysis-themes.html" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+     <div class="flip-card"
+     data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/science fiction/brave new world.jpg"  alt="all the light" />
+          <h4>BRAVE NEW WORLD</h4>
+          <p>By ALDOUS HUXLEY</p>
+          <p>RS 449/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> a dystopian novel set in a futuristic, technologically advanced society called the World State, where citizens are genetically engineered and conditioned into predetermined social classes from birth.
+    </p>
+    <a href="https://www.sparknotes.com/lit/bravenew/summary/" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+     <div class="flip-card"
+     data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/science fiction/dune.jpg"  alt="all the light" />
+          <h4>DUNE </h4>
+          <p>By FRANK HERBERT</p>
+          <p>RS 1050/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> the story of Paul Atreides, a young man whose noble family is entrusted with the dangerous desert planet Arrakis, the sole source of the valuable "spice" melange
+    </p>
+    <a href="https://www.sparknotes.com/lit/dune/summary/" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+     <div class="flip-card"
+     data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/science fiction/electric kingdom.jpg"  alt="all the light" />
+          <h4>THE ELECTRIC KINGDOM </h4>
+          <p>By DAVID ARNOLD</p>
+          <p>RS 455/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> Mr. Arnold drops us into a post-apocalyptic world where massive swarms of bees have overrun and killed most of humanity. 
+    </p>
+    <a href="https://kellylacey.com/2023/12/24/book-review-the-electric-kingdom-by-david-arnold-kellyalacey-bookblogger-reader-booktwt-sharingiscaring-bookreview-scottishbookblogger/" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+     <div class="flip-card"
+     data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/science fiction/jpg.jfif"  alt="all the light" />
+          <h4>PRELUDE TO FOUNDATION</h4>
+          <p>By ISAAC ASIMOV</p>
+           <p>RS 2445/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> tells the story of Hari Seldon's early career and his development of the revolutionary science of psychohistory.
+    </p>
+    <a href="https://en.wikipedia.org/wiki/Prelude_to_Foundation" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+ <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+     <div class="flip-card"
+     data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/science fiction/red mars.jpg"  alt="all the light" />
+          <h4>RED MARS </h4>
+          <p>By KIM STANLEY ROBINSON</p>
+          <p>RS 456/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> chronicles the initial colonization and terraforming of Mars by a group of one hundred pioneers in the year 2026
+    </p>
+    <a href="https://www.neworleansreview.org/red-mars/" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+     <div class="flip-card"
+     data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/science fiction/scott.jpg"  alt="all the light" />
+          <h4>THE ENDER'S GAME </h4>
+          <p>By ORSON SCOTT</p>
+          <p>RS 999/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong>  the story of Andrew "Ender" Wiggin, a young boy recruited by Earth's military to train at Battle School in space
+    </p>
+    <a href="https://en.wikipedia.org/wiki/Ender%27s_Game" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+     <div class="flip-card"
+     data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/science fiction/the ultimat.png"  alt="all the light" />
+          <h5>THE ULTIMATE HITCHHIKER'S GUIDE TO GALAXY </h5>
+          <p>By DOUGLAS ADAM</p>
+         <p>RS 999/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> a comedic science fiction series following Arthur Dent, an ordinary Englishman whose life is upended when Earth is destroyed. He escapes with his friend Ford Prefect, an alien researcher, and together they embark on a series of absurd adventures across the galaxy
+    </p>
+    <a href="https://www.sparknotes.com/lit/hitchhikers-guide-to-the-galaxy/summary/" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+      </div>
+    </section>
+        </div>
+    <br>
+<div class="category-section">
+        <h1 class="h2" id="historicalFiction">Historical Fiction</h1>
+        <br>
+        
+         <section class="collection-section">
+      <div class="collection-grid">
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/historical fiction/geisha.jpg"  alt="all the light" />
+          <h4>GEISHA </h4>
+          <p>By ARTHUR GOLDEN</p>
+          <p>RS 999/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> the fictional story of Nitta Sayuri, a young Japanese girl who is sold into a geisha house in Kyoto before World War I 
+    </p>
+    <a href="https://ahavenforbooklovers.wordpress.com/2016/01/11/memoirs-of-a-geisha/" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/historical fiction/gone with the wind.jpg"  alt="all the light" />
+          <h4>GONE WITH THE WIND </h4>
+          <p>By MARGARRET MITCHELL</p>
+         <p>RS 999/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> hat follows the life of Scarlett O'Hara, a strong-willed Southern belle, during the American Civil War and Reconstruction
+    </p>
+    <a href="https://en.wikipedia.org/wiki/Gone_with_the_Wind_(novel)" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/historical fiction/ken.jpg"  alt="all the light" />
+          <h4>THE PILLARS OF THE EARTH </h4>
+          <p>By KEN FOLLET</p>
+          <p>RS 999/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> The story centers on the construction of a magnificent Gothic cathedral in the fictional town of Kingsbridge, and follows the intertwined lives of various characters, including a mason, a prior, a noblewoman, and a ruthless nobleman, as they navigate ambition, love, betrayal, and revenge against the backdrop of this ambitious building project. 
+    </p>
+    <a href="https://en.wikipedia.org/wiki/The_Pillars_of_the_Earth" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/historical fiction/kristin.png"  alt="all the light" />
+          <h4>THE NIGHTINGALE </h4>
+          <p>By KRISTIN HANNAH</p>
+          <p>RS 999/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> the story of two sisters, Vianne and Isabelle, in Nazi-occupied France during World War II
+    </p>
+    <a href="https://www.cliffsnotes.com/literature/n/the-nightingale/at-a-glance" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+      </div>
+         </section>
+</div>
+         <br>
+    <br>
+    <div class="category-section">
+
+        <h1 class="h2" id="history">HISTORY </h1>
+        <br>
+        <br>
+        
+         <section class="collection-section">
+      <div class="collection-grid">
+
+<div class="flip-card"
+data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/history/2nd world war.jpg"  alt="lost" />
+          <h5>THE SECOND WORLD WAR</h5>
+          <p>By WINSTON CHURCHILL</p>
+          <p>RS 820/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> "The Second World War" by Winston Churchill is a six-volume historical account of the war, written from his perspective as a key participant and leader. The work covers the period from the end of World War I to the end of WWII, analyzing the failures of post-WWI policies, the rise of militarism, and the outbreak of the war. Churchill details military strategies, political dynamics, and key figures, offering a personal and insightful look at the conflict. 
+
+    </p>
+    <a href="https://en.wikipedia.org/wiki/Winston_Churchill_in_the_Second_World_War" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/history/a world undone.jpg"  alt="lost" />
+          <h5>A WORLD UNDONE </h5>
+          <p>By G.J. MEYER</p>
+          <p>RS 820/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> a comprehensive historical account of World War I. The book details the events, figures, and consequences of the war, from its origins in the summer of 1914 to the armistice in 1918. It explores the complex political landscape, the devastating battles, and the ultimate collapse of a world order that had dominated the globe before 1914. 
+    </p>
+    <a href="https://lotzintranslation.com/2017/11/21/review-a-world-undone/" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/history/afghanistan.jpg"  alt="lost" />
+          <h5>AFGHANISTAN</h5>
+          <p>By JONATHAN L. LEE</p>
+          <p>RS 820/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong>  the story of how a small tribal confederacy in a politically and culturally significant but volatile region became a modern nation-state.
+    </p>
+    <a href="https://www.historytoday.com/archive/review/afghanistan-jonathan-l-lee-review" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+ <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/history/fast track us history.jpg"  alt="lost" />
+          <h5>U.S HISTORY </h5>
+          <p>By PRINCETON REVIEW</p>
+          <p>RS 820/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> a comprehensive approach to mastering the subject, including content review, practice exams, and test-taking strategies
+    </p>
+    <a href="https://www.amazon.com/Princeton-Review-U-S-History-Premium/dp/0593517296" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/history/genghis khan.jpg"  alt="lost" />
+          <h5>GENGHIS KHAN</h5>
+          <p>By JACK WEATHERFORD</p>
+          <p>RS 820/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> argues that Genghis Khan's Mongol Empire, often viewed as a force of destruction, was also a catalyst for significant positive changes that shaped the modern world.
+    </p>
+    <a href="https://en.wikipedia.org/wiki/Genghis_Khan_and_the_Making_of_the_Modern_World" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/history/hist of sindh.jpg"  alt="lost" />
+          <h5>HISTORY OF SINDH</h5>
+          <p>By MIRZA QALEECH BAIG</p>
+          <p>RS 820/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> Sindh has a rich history, notably featuring the Indus Valley Civilization, one of the world's oldest urban cultures, which flourished around 3300-1750 BC. 
+    </p>
+    <a href="https://en.wikipedia.org/wiki/History_of_Sindh" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/history/history of europe.jpg"  alt="lost" />
+          <h5>HISTORY OF EUROPE</h5>
+          <p>By SIMON JENKINS </p>
+          <p>RS 820/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> provides a concise overview of the continent's evolution from ancient Greece to the present day, focusing on key events, influential figures, and defining conflicts
+    </p>
+    <a href="http://www.libertybooks.com/a-short-history-of-europe-from-pericles-to-putin-9780241352526" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+ <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/history/history of islam.jpg"  alt="lost" />
+          <h5>HISTORY OF ISLAM</h5>
+          <p>By AKBAR SHAH NAJEEBABADI</p>
+          <p>RS 820/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> This book traces time before Islam, Rasulullah's journey right up to Hassan's (Rasulullah's grandson) short caliphate
+    </p>
+    <a href="" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/history/peoples story of us.jpg"  alt="lost" />
+                   <h5>PEOPLE'S STORY OF U.S.</h5>
+          <p>By HOWARD ZINN</p>
+          <p>RS 820/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong>  Howard Zinn offers a revisionist perspective on American history, focusing on the experiences and struggles of ordinary people, rather than the actions of political and economic elites.
+    </p>
+    <a href="https://www.zinnedproject.org/materials/peoples-history-of-the-united-states/" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/history/world history.jpg"  alt="lost" />
+          <h5>WORLD HISTORY</h5>
+          <p>By ELLIS ELCER</p>
+           <p>RS 820/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> summarizes the history of humanity from its earliest beginnings to the present day, covering major civilizations, empires, and global events
+    </p>
+    <a href="https://fivebooks.com/category/history-books/world-history-books/" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+         </section>
+    </div>
+    
+    <br>
+    <br>
+    <div class="category-section">
+
+        <h1 class="h2" id="action&adventure">Action & Adventure </h1>
+        <br>
+        <br>
+        
+         <section class="collection-section">
+      <div class="collection-grid">
+
+<div class="flip-card"
+data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/action n adventure/a thunder.jpg"  alt="lost" />
+          <h5>A THUNDER OF MONSTER</h5>
+          <p>By S.A PATRICK</p>
+          <p>RS 820/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> Patch Brightwater and his friend Barver, the dracogriff, are trapped on a mysterious island full of monstrous beasts.
+    </p>
+    <a href="https://www.readingzone.com/books/a-thunder-of-monsters/" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/action n adventure/hilo the great big boom.jpg"  alt="lost" />
+          <h4>HILO THE GREAT BIG BOOM</h4>
+          <p>By JUDD WINICK</p>
+          <p>RS 820/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> Hilo, a boy from space, and his friends, DJ and Gina, embark on a new adventure. They travel to another dimension to confront Razorwark, an evil robot overlord, and his army of mechanized reptiles, the Scale Tail Clan. Hilo grapples with regaining his lost memories while battling enemies and navigating a world different from Earth
+    </p>
+    <a href="https://www.commonsensemedia.org/book-reviews/the-great-big-boom-hilo-book-3" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/action n adventure/hilo.jpg"  alt="lost" />
+          <h5>HILO THE BOY WHO CRASHED TO EARTH</h5>
+          <p>By JUDD WINICK</p>
+         <p>RS 820/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+           <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> a boy who crash-lands on Earth with no memory of who he is or where he came from. He befriends two kids, D.J. and Gina, who help him navigate school and discover his amazing, though sometimes uncontrollable, superpowers. Together, they must uncover the secrets of Hilo's past and protect Earth from a dangerous enemy. 
+    </p>
+    <a href="https://www.comicsappreciationproject.com/hilo-the-boy-who-crashed-to-earth/" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/action n adventure/light thieves.jpg"  alt="lost" />
+          <h5>THE LIGHT THIEVES</h5>
+          <p>By HELENA DUGGAN</p>
+          <p>RS 820/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> The Light Thieves follows a world where the Earth has tilted onto the side, and the story of Grian, his friends Jeffrey and Shelli, when his sister goes off to a new city created by billionaire tech genius Howard Hansom to fix the problem of the Earth tilting.
+    </p>
+    <a href="https://childrensbooksireland.ie/our-recommendations/light-thieves" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/action n adventure/matt haig.jpg"  alt="lost" />
+          <h5>EVIE & THE ANIMALS</h5>
+          <p>By MATT HAIG</p>
+          <p>RS 820/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> Evie has a special ability: she can understand what animals are thinking. When a pet-thief begins stealing animals, Evie must use her gift to save them, even if it means facing her own fears and breaking a promise to her dad.
+    </p>
+    <a href="https://www.harpercollins.ca/9781443460057/evie-and-the-animals/#:~:text=About%20the%20Book&text=Evie%20is%20a%20girl%20with,year%2C%20Evie%20ignores%20them%20all." class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+ <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/action n adventure/sisterr.jpg"  alt="lost" />
+          <h5>SISTERS OF SWORD & SONG.</h5>
+          <p>By REBECCA ROSS</p>
+          <p>RS 820/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong>  the story of two sisters, Evadne and Halcyon, in a world inspired by ancient Greece
+    </p>
+    <a href="https://www.goodreads.com/book/show/52038346-sisters-of-sword-and-song" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+ <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/action n adventure/speechweel.jpg"  alt="lost" />
+          <h5>THE RACE AGAINST CRIME</h5>
+          <p>By JENNY PEARSON</p>
+          <p>RS 820/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> Evie Clutterbuck is ready for the adventure of a lifetime! She's joining her dad on the Speedwheels 3000 - the most exciting, most famous, most bonkers car race in the whole world, driving through seven countries and competing in challenges in their trusty car, Toots
+    </p>
+    <a href="https://www.lovereading4kids.co.uk/book/24391/Speedwheels-3000-The-Race-Against-Crime-by-Jenny-Pearson.html#:~:text=Speedwheels%203000%3A%20The%20Race%20Against%20Crime%20Synopsis&text=Evie%20Clutterbuck%20is%20ready%20for,in%20their%20trusty%20car%2C%20Toots." class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+ 
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+        </section>
+    </div>
+<br>
+<br>
+<div class="category-section">
+
+        <h1 class="h2" id="comic&graphics">Comic & Graphic </h1>
+        <br>
+        <br>
+        
+         <section class="collection-section">
+      <div class="collection-grid">
+         <div class="flip-card"
+         data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/comic and graphic/bumble snug.jpg"  alt="lost" />
+          <h4>BUMBLE & SNUG</h4>
+          <p>By MARK BRADLEY</p>
+          <p>RS 820/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> The BumbleBunnies series features superhero bunnies who transform into bees to help their friends in everyday situations
+    </p>
+    <a href="https://www.amazon.com/Bumble-Bunny-Life-Swinton-Green/dp/B0BW345Q24" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+ <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+
+   
+     <div class="flip-card"
+     data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/comic and graphic/monkey.png"  alt="lost" />
+          <h4>MONKEY VS BUNNY</h4>
+          <p>By JAMES LITTLER</p>
+          <p>RS 820/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> a comic series about a good-natured bunny who must constantly thwart the evil plans of a monkey determined to take over the forest and establish "Monkeytopia"
+    </p>
+    <a href="https://www.booktrust.org.uk/book-recommendations/bookfinder/bunny-vs-monkey/" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+ <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+        </section>
+</div>
+<br>
+<br>
+<div class="category-section">
+
+        <h1 class="h2" id="crime&mystery">Crime & Mystery </h1>
+        <br>
+        <br>
+        <section class="collection-section">
+      <div class="collection-grid">
+   <div class="flip-card"
+   data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/crime n mystery/gone girl.jpg"  alt="lost" />
+          <h4>GONE GIRL</h4>
+          <p>By GILLIAN FLYNN</p>
+          <p>RS 820/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong>  the story of Nick and Amy Dunne, whose seemingly perfect marriage unravels when Amy disappears on their fifth anniversary
+    </p>
+    <a href="https://en.wikipedia.org/wiki/Gone_Girl_(novel)" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+ <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/crime n mystery/good girl.jfif"  alt="lost" />
+          <h4>A GOOD GIRL'S GUIDE TO MURDER</h4>
+          <p>By HOLLY JACKSON</p>
+         <p>RS 820/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> Pippa "Pip" Fitz-Amobi, a high school senior, reinvestigates the murder of Andie Bell, a case that was previously closed with Sal Singh as the presumed killer who also died by suicide. 
+    </p>
+    <a href="https://en.wikipedia.org/wiki/A_Good_Girl%27s_Guide_to_Murder" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/crime n mystery/lovely bones.jpg"  alt="lost" />
+          <h4>THE LOVELY BONES</h4>
+          <p>By ALICE SEBOLD</p>
+           <p>RS 820/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> "The Lovely Bones" by Alice Sebold is a novel narrated by Susie Salmon, a 14-year-old girl who has been murdered. From her personal heaven, Susie watches her family and friends struggling to cope with her death, while she also observes her killer and grapples with her own sense of loss and the desire to connect with her loved ones. The story explores themes of grief, family dynamics, and the search for closure after a tragedy. 
+    </p>
+    <a href="https://www.sparknotes.com/lit/the-lovely-bones/plot-analysis/" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+ <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/crime n mystery/rule.jpg"  alt="lost" />
+          <h4>A RULE AGAINST MURDER </h4>
+          <p>By LOUISE PENNY</p>
+          <p>RS 820/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> When a murder occurs during a family reunion, Chief Inspector Armand Gamache must unravel dark secrets and hidden motives to uncover the truth.
+    </p>
+    <a href="https://www.goodreads.com/book/show/4201106-a-rule-against-murder" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+ <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/crime n mystery/shadow.jfif"  alt="lost" />
+          <h4>THE SHADOW OF THE WIND</h4>
+          <p>By CARLOS RUIZ ZAFON</p>
+          <p>RS 820/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> tells the story of Daniel Sempere, a young boy in post-Civil War Barcelona who discovers a mysterious book, "The Shadow of the Wind" by Julian Carax, at the Cemetery of Forgotten Book
+    </p>
+    <a href="https://www.hastybooklist.com/blog/book-review-the-shadow-of-the-wind" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+ <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/crime n mystery/the girl.jpg"  alt="lost" />
+          <h4>GIRL WITH DRAGON TATTOO</h4>
+          <p>By STIEG LARRSON</p>
+           <p>RS 820/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> Disgraced financial reporter Mikael Blomkvist (Daniel Craig) finds a chance to redeem his honor after being hired by wealthy Swedish industrialist Henrik Vanger (Christopher Plummer) to solve the 40-year-old murder of Vanger's niece, Harriet. Vanger believes that Harriet was killed by a member of his own family. Eventually joining Blomkvist on his dangerous quest for the truth is Lisbeth Salander (Rooney Mara), an unusual but ingenious investigator whose fragile trust is not easily won.
+
+    </p>
+    <a href="https://www.cliffsnotes.com/literature/g/the-girl-with-the-dragon-tattoo/book-summary" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+        </section>
+</div>
+        <br>
+
+<div class="category-section">
+
+        <h1 class="h2" id="classic">Classic </h1>
+        <br>
+        <br>
+        <section class="collection-section">
+      <div class="collection-grid">
+         <div class="flip-card"
+         data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/classic/1984.jpg"  alt="lost" />
+          <h4>1984</h4>
+          <p>By GEORGE ORWELL</p>
+         <p>RS 820/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> a dystopian novel set in a totalitarian state called Oceania, where the Party, led by the enigmatic Big Brother, controls every aspect of life, including thought
+    </p>
+    <a href="https://en.wikipedia.org/wiki/Nineteen_Eighty-Four" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/classic/harper lee.jpg"  alt="lost" />
+          <h4>TO KILL A MOCKINGBIRD</h4>
+          <p>By HARPER LEE</p>
+          <p>RS 820/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong>  a coming-of-age story told through the eyes of Scout Finch, a young girl living in the fictional town of Maycomb, Alabama, during the 1930s
+    </p>
+    <a href="https://en.wikipedia.org/wiki/To_Kill_a_Mockingbird" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+ <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card"
+    data-title="Hide And Seek"
+    data-price="1349"
+    data-author="Olivia Wilson"
+    data-image="images/products/english/hide nseek.webp">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/products/classic/pride.jpg"  alt="lost" />
+          <h4>PRIDE AND PREJUDICE</h4>
+          <p>By JANE AUSTEN</p>
+          <p>RS 820/-</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Details</h4>
+          <p>This is a best-selling book with excellent reviews!</p>
+          <!-- changess -->
+          <button class="see-more-btn" onclick="toggleOptions(this)">
+  <span class="arrow-icon">🔽</span>
+</button>
+  <div class="more-options hidden">
+    <p class="summary">
+      <strong>Summary:</strong> follows the love story of Elizabeth Bennet and Fitzwilliam Darcy, two individuals from different social classes who initially clash due to their pride and prejudice. 
+    </p>
+    <a href="https://en.wikipedia.org/wiki/Pride_and_Prejudice" class="review-link" target="_blank">Read Reviews</a>
+  </div>
+
+  <div class="action-buttons">
+  <div class="icon-wrapper">
+    <button class="add-cart-btn">
+      <i class="fas fa-shopping-cart icon-cart"></i>
+      <span class="hover-text">Add to Cart</span>
+    </button>
+  </div>
+  
+  <div class="icon-wrapper">
+    <button class="wishlist-btn">
+      <i class="fas fa-heart"></i>
+      <span class="hover-text">Add to Wishlist</span>
+    </button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+        </section>
+</div>
+<!-- collections ends here -->
+
+<div id="cart-alert" class="cart-alert">Product added to cart!</div>
+
+<!-- Wishlist Alert -->
+<div id="wishlist-alert" class="cart-alert">Product added to wishlist!</div>
+   
+   
+   
+  
+
+
+    <script>
+     
+
+      //  theme toggle functionality
+      function toggleTheme() {
+    document.body.classList.toggle("light-mode");
+    const icon = document.querySelector(".toggle-btn i");
+    const isLightMode = document.body.classList.contains("light-mode");
+
+    // Save preference
+    localStorage.setItem("theme", isLightMode ? "light" : "dark");
+
+    // Update icon
+    icon.classList.remove(isLightMode ? "fa-moon" : "fa-sun");
+    icon.classList.add(isLightMode ? "fa-sun" : "fa-moon");
+}
+window.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("theme");
+    const icon = document.querySelector(".toggle-btn i");
+
+    if (savedTheme === "light") {
+        document.body.classList.add("light-mode");
+        if (icon) {
+            icon.classList.remove("fa-moon");
+            icon.classList.add("fa-sun");
+        }
+    } else {
+        if (icon) {
+            icon.classList.remove("fa-sun");
+            icon.classList.add("fa-moon");
+        }
+    }
+});
+        window.onscroll = function () {
+            let scrollButton = document.getElementById("scrollToTop");
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollButton.style.display = "block";
+            } else {
+                scrollButton.style.display = "none";
+            }
+        };
+        
+        // Scroll to top smoothly
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+        // see more button
+
+  function toggleOptions(button) {
+    const options = button.nextElementSibling;
+    const icon = button.querySelector(".arrow-icon");
+
+    options.classList.toggle('hidden');
+
+    // Change the arrow icon
+    icon.textContent = options.classList.contains('hidden') ? '🔽' : '🔼';
+  }
+
+// Cart functionality`~
+  let iconCart = document.querySelector('.icon-cart');
+  let closeCart = document.querySelector('.close');
+  let body = document.querySelector('body');
+
+  iconCart.addEventListener('click', () => {
+    body.classList.toggle('showCart')
+  }); 
+ closeCart.addEventListener('click', () => {
+    body.classList.toggle('showCart')
+  });
+// cart functionality end
+
+window.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.add-cart-btn').forEach(button => {
+    button.addEventListener('click', function(e) {
+      const card = button.closest('.flip-card-inner').querySelector('.flip-card-front');
+      const name = card.querySelector('h4, h5').textContent.trim();
+      const priceText = card.querySelector('p:last-of-type').textContent.trim();
+      const price = parseInt(priceText.replace(/[^0-9]/g, ''));
+      addToCart(name, price);
+    });
+  });
+  // Cart icon click always shows the popup and updates contents
+  const cartIcon = document.querySelector('.cart-icon');
+  if (cartIcon) {
+    cartIcon.addEventListener('click', function() {
+      updateCartPopup();
+      showCartPopup();
+    });
+  }
+});
+
+// add to cart functionality
+let cart = []; 
+let cartCount = 0;
+
+const cartCountEl = document.getElementById('cart-count');
+const addToCartButtons = document.querySelectorAll('.add-cart-btn');
+const listCart = document.querySelector('.listCart');
+const cartTab = document.querySelector('.cartTab');
+const closeCartBtn = document.querySelector('.close');
+const cartIcon = document.querySelector('.icon-cart');
+const grandTotalEl = document.getElementById('grand-total'); // Grand total element
+
+// Load cart from localStorage
+window.addEventListener('load', () => {
+  const storedCart = localStorage.getItem('cart');
+  if (storedCart) {
+    cart = JSON.parse(storedCart);
+    updateCartCount();
+    renderCart();
+  }
+});
+
+// Show Cart Popup
+cartIcon.addEventListener('click', () => {
+  cartTab.style.display = 'block';
+});
+
+// Close Cart Popup
+closeCartBtn.addEventListener('click', () => {
+  cartTab.style.display = 'none';
+});
+
+// Popup Alert
+function showCartAlert(message) {
+  const alertBox = document.getElementById('cart-alert');
+  alertBox.innerText = message;
+  alertBox.classList.add('show');
+
+  setTimeout(() => {
+    alertBox.classList.remove('show');
+  }, 3000);
+}
+
+// Update cart count
+function updateCartCount() {
+  cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+  cartCountEl.innerText = cartCount;
+}
+
+// Render cart items
+function renderCart() {
+  listCart.innerHTML = '';
+if (cart.length === 0) {
+  listCart.innerHTML = `<p style="text-align:center; padding: 10px;">No items in your cart.</p>`;
+  updateGrandTotal(); // Still update total to show 0
+  return;
+}
+
+  cart.forEach((item, index) => {
+    const cartItem = document.createElement('div');
+    cartItem.classList.add('item');
+    cartItem.innerHTML = `
+      <div class="image">
+        <img src="${item.imageSrc}" alt="">
+      </div>
+      <div class="name">${item.title}</div>
+      <div class="totalPrice">RS ${item.price * item.quantity}/-</div>
+      <div class="quantity">
+        <span class="minus" data-index="${index}"><</span>
+        <span>${item.quantity}</span>
+        <span class="plus" data-index="${index}">></span>
+      </div>
+      <div class="remove" data-index="${index}" style="color:red;cursor:pointer;">Remove</div>
+    `;
+    listCart.appendChild(cartItem);
+  });
+
+  updateGrandTotal();
+  attachCartEvents();
+}
+
+// Add item to cart
+addToCartButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const card = button.closest('.flip-card');
+    const title = card.dataset.title;
+    const price = parseFloat(card.dataset.price);
+    const imageSrc = card.dataset.image;
+
+    const existingItem = cart.find(item => item.title === title);
+
+    if (existingItem) {
+      existingItem.quantity++;
+    } else {
+      cart.push({ title, price, imageSrc, quantity: 1 });
+    }
+
+    saveCart();
+    updateCartCount();
+    renderCart();
+    showCartAlert(`${title} added to your cart!`);
+  });
+});
+
+// Save to localStorage
+function saveCart() {
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+// Update Grand Total
+function updateGrandTotal() {
+  const grandTotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  grandTotalEl.innerText = `Grand Total: RS ${grandTotal}/-`;
+}
+
+// Attach plus, minus, remove events
+function attachCartEvents() {
+  const plusButtons = document.querySelectorAll('.plus');
+  const minusButtons = document.querySelectorAll('.minus');
+  const removeButtons = document.querySelectorAll('.remove');
+
+  plusButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const index = btn.dataset.index;
+      cart[index].quantity++;
+      saveCart();
+      updateCartCount();
+      renderCart();
+    });
+  });
+
+  minusButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const index = btn.dataset.index;
+      if (cart[index].quantity > 1) {
+        cart[index].quantity--;
+      } else {
+        cart.splice(index, 1); 
+      }
+      saveCart();
+      updateCartCount();
+      renderCart();
+    });
+  });
+
+  removeButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const index = btn.dataset.index;
+      cart.splice(index, 1);
+      saveCart();
+      updateCartCount();
+      renderCart();
+    });
+  });
+}
+// cart functionality ends here
+// search bar functionality
+function filterBooks() {
+  const input = document.getElementById("searchInput");
+  const filter = input.value.toLowerCase();
+  const cards = document.querySelectorAll(".flip-card");
+
+  cards.forEach(card => {
+    const titleEl = card.querySelector(".flip-card-front h4");
+    const authorEl = card.querySelector(".flip-card-front p");
+    
+    const titleText = titleEl.textContent;
+    const authorText = authorEl.textContent;
+
+    const titleMatch = titleText.toLowerCase().includes(filter);
+    const authorMatch = authorText.toLowerCase().includes(filter);
+
+    // Highlight function
+    const highlightMatch = (text, query) => {
+      const idx = text.toLowerCase().indexOf(query);
+      if (query && idx !== -1) {
+        return text.substring(0, idx) +
+               '<span class="highlight">' +
+               text.substring(idx, idx + query.length) +
+               '</span>' +
+               text.substring(idx + query.length);
+      }
+      return text;
+    };
+
+    // Show card if match, else hide
+    if (titleMatch || authorMatch) {
+      card.style.display = "block";
+      titleEl.innerHTML = highlightMatch(titleText, filter);
+      authorEl.innerHTML = highlightMatch(authorText, filter);
+    } else {
+      card.style.display = "none";
+      titleEl.innerHTML = titleText;
+      authorEl.innerHTML = authorText;
+    }
+
+    // Reset highlighting when input is empty
+    if (!filter) {
+      titleEl.innerHTML = titleText;
+      authorEl.innerHTML = authorText;
+      card.style.display = "block";
+    }
+  });
+}
+// search bar functionality ends here
+
+// Wishlist Elements
+const wishlistTab = document.querySelector(".wishlistTab");
+const wishlistToggle = document.getElementById("wishlist-toggle");
+const closeWishlistBtn = document.querySelector(".closeWishlist");
+const listWishlist = document.querySelector(".listWishlist");
+
+// Load wishlist from localStorage
+let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+// Show/Hide Wishlist Tab
+wishlistToggle.addEventListener("click", () => {
+  wishlistTab.classList.toggle("active");
+});
+
+closeWishlistBtn.addEventListener("click", () => {
+  wishlistTab.classList.remove("active");
+});
+
+// Add to Wishlist from Product Card
+document.querySelectorAll(".wishlist-btn").forEach(button => {
+  button.addEventListener("click", () => {
+    const productCard = button.closest(".flip-card");
+
+    const product = {
+      title: productCard.dataset.title,
+      price: parseFloat(productCard.dataset.price),
+      imageSrc: productCard.dataset.image
+    };
+
+    if (!wishlist.find(item => item.title === product.title)) {
+      wishlist.push(product);
+      localStorage.setItem('wishlist', JSON.stringify(wishlist));
+      renderWishlist();
+      showWishlistAlert(`${product.title} added to your wishlist!`);
+    } else {
+      showWishlistAlert("Already in Wishlist");
+    }
+  });
+});
+
+// Render Wishlist Items
+function renderWishlist() {
+  listWishlist.innerHTML = "";
+if (wishlist.length === 0) {
+  listWishlist.innerHTML = `<p style="text-align:center; padding: 10px;">No items in your wishlist.</p>`;
+  return;
+}
+
+  wishlist.forEach((product, index) => {
+    const item = document.createElement("div");
+    item.classList.add("wishlist-item");
+
+    item.innerHTML = `
+      <img src="${product.imageSrc}" width="50">
+      <div>
+        <h4>${product.title}</h4>
+        <p>Rs ${product.price}/-</p>
+        <button class="remove-wishlist" data-index="${index}">Remove</button>
+        <button class="move-to-cart" data-index="${index}">Add to Cart</button>
+      </div>
+    `;
+
+    listWishlist.appendChild(item);
+  });
+
+  // Remove from Wishlist
+  document.querySelectorAll(".remove-wishlist").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const index = btn.dataset.index;
+      wishlist.splice(index, 1);
+      localStorage.setItem('wishlist', JSON.stringify(wishlist));
+      renderWishlist();
+    });
+  });
+
+  // Move to Cart from Wishlist
+  document.querySelectorAll(".move-to-cart").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const index = btn.dataset.index;
+      const product = wishlist[index];
+      wishlist.splice(index, 1);
+      localStorage.setItem('wishlist', JSON.stringify(wishlist));
+      renderWishlist();
+
+      // Check if item exists in cart
+      const existingItem = cart.find(item => item.title === product.title);
+      if (existingItem) {
+        existingItem.quantity++;
+      } else {
+        cart.push({ title: product.title, price: product.price, imageSrc: product.imageSrc, quantity: 1 });
+      }
+
+      saveCart();
+      updateCartCount();
+      renderCart();
+      showCartAlert(`${product.title} added to your cart!`);
+    });
+  });
+}
+
+// Render wishlist on page load
+window.addEventListener('DOMContentLoaded', renderWishlist);
+
+// Checkout functionality
+const checkoutBtn = document.querySelector('.checkOut');
+
+checkoutBtn.addEventListener('click', () => {
+  if (cart.length === 0) {
+    showCartAlert("Your cart is empty!");
+    return;
+  }
+
+  fetch('set_cart.php', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(cart)
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.success) {
+      window.location.href = 'checkout.php';
+    } else {
+      showCartAlert("Failed to send cart data. Try again.");
+    }
+  })
+  .catch(err => {
+    console.error(err);
+    showCartAlert("Error connecting to server.");
+  });
+});
+
+// Show Cart Alert
+function showCartAlert(message) {
+  const alertBox = document.getElementById('cart-alert');
+  alertBox.innerText = message;
+  alertBox.classList.add('show');
+
+  setTimeout(() => {
+    alertBox.classList.remove('show');
+  }, 3000);
+}
+
+// Show Wishlist Alert
+function showWishlistAlert(message) {
+  const alertBox = document.getElementById('wishlist-alert');
+  alertBox.innerText = message;
+  alertBox.classList.add('show');
+
+  setTimeout(() => {
+    alertBox.classList.remove('show');
+  }, 3000);
+}
+
+
+
+
+    </script>
+</body>
+</html>

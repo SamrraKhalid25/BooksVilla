@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .wishlistTab {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background: white;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+  padding: 20px;
+  overflow-y: auto;
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+
+.showWishlist .wishlistTab {
+  right: 0;
+}
+
+  </style>
+</head>
+<body>
+  <!-- Wishlist Icon -->
+<div class="icon-wishlist">💖</div>
+
+<!-- Wishlist Tab -->
+<div class="wishlistTab">
+  <h2>My Wishlist</h2>
+  <div class="listWishlist"></div>
+  <button class="closeWishlist">Close</button>
+</div>
+
+  <script>
+    let wishlist = [];
+const wishlistIcon = document.querySelector('.icon-wishlist');
+const wishlistTab = document.querySelector('.wishlistTab');
+const closeWishlistBtn = document.querySelector('.closeWishlist');
+const listWishlist = document.querySelector('.listWishlist');
+const wishlistButtons = document.querySelectorAll('.wishlist-btn');
+
+wishlistIcon.addEventListener('click', () => {
+  document.body.classList.toggle('showWishlist');
+});
+
+closeWishlistBtn.addEventListener('click', () => {
+  document.body.classList.remove('showWishlist');
+});
+
+wishlistButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const productCard = button.closest('.flip-card'); // adjust selector if needed
+    const productName = productCard.querySelector('h4').innerText;
+    const productImage = productCard.querySelector('img').src;
+
+    const existing = wishlist.find(item => item.name === productName);
+
+    if (!existing) {
+      wishlist.push({ name: productName, image: productImage });
+      updateWishlist();
+    } else {
+      alert('Already in wishlist!');
+    }
+  });
+});
+
+function updateWishlist() {
+  listWishlist.innerHTML = '';
+  wishlist.forEach(item => {
+    const div = document.createElement('div');
+    div.classList.add('wishlist-item');
+    div.innerHTML = `
+      <img src="${item.image}" alt="${item.name}" width="50">
+      <span>${item.name}</span>
+    `;
+    listWishlist.appendChild(div);
+  });
+}
+
+  </script>
+</body>
+</html>
